@@ -23,7 +23,7 @@ If you need someone's code for example I need to get _David's_ code I look for h
 
 ### Just in case you forgot how to push to your branch
 
-`git add.`
+`git add .`
 `git commit -m "Please let it be a meaningful message for debugging purposes"`
 `git push -u orign <your branch>`<span style="color:blue">If its a new branch</span>
 
