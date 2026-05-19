@@ -1,6 +1,6 @@
 # Please for the _Interns_
 
-This is what I was the best way I could think of coming up with the app and ensuring the two environments (Angular and Nestjs) stay separate.
+This is what the best way I could think of coming up with the app and ensuring the two environments (Angular and Nestjs) stay separate.
 
 ### medicore-app: This is the frontend <a href="https://angular.dev/overview">(Angular)</a>
 
