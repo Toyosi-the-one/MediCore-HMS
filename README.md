@@ -32,13 +32,13 @@ If you need someone's code for example I need to get _David's_ code I look for h
 
 For merge conflicts I advice you to set up a meeting with who you have conflicts with to avoid removing or adding unneccesary things.
 
-[!IMPORTANT]
+>[!IMPORTANT]
+>
+>Just in case you haven't caught up don't add angle brackets < or > to the command line when working.
 
-Just in case you haven't caught up don't add angle brackets < or > to the command line when working.
-
-[!TIP]
-
-Not compulsory btw: I'll lwk advice you to get _GitLens_ extension from VScode it allows you to see who edited what and what day/time.
+>[!TIP]
+>
+>Not compulsory btw: I'll lwk advice you to get _GitLens_ extension from VScode it allows you to see who edited what and what day/time.
 
 **Also Important:**
 Don't push broken code it affects whoever is pulling your code if you have an issue and you need some help debugging dont push to your branch create a new branch from that branch push there and let someone else go to that branch for debugging.
@@ -51,5 +51,5 @@ Also try your best to comment on your code as much as possible its human beings 
 
 That's all I can think of for now but as time passes I might add more to the README. file. Anyways thanks and don't erase or break our code we just have three weeks on this!!!
 
-[!IMPORTANT]
-Please if you have any issues you can contact Mr Babatunde or the other interns.
+>[!IMPORTANT]
+>Please if you have any issues you can contact Mr Babatunde or the other interns.
