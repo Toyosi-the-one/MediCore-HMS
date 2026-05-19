@@ -8,7 +8,7 @@ This is what I was the best way I could think of coming up with the app and ensu
 
 To get this repo into you VScode open the folder you want to put it into and do
 
-`git clone <the repo's url>`
+`git remote add origin <the repo URL>`
 
 And yes thank God I remember before you are any changes please 🙏🏽 create your own branch from the main before doing it you can do that with:
 
