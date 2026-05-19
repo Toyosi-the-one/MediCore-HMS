@@ -8,6 +8,7 @@ This is what the best way I could think of coming up with the app and ensuring t
 
 To get this repo into you VScode open the folder you want to put it into and do
 `git init`
+
 `git remote add origin <the repo URL>`
 
 And yes thank God I remember before you start make any changes please 🙏🏽 create your own branch from the main before doing it you can do that with:
@@ -24,7 +25,7 @@ If you need someone's code for example I need to get _David's_ code I look for h
 
 `git add.`
 `git commit -m "Please let it be a meaningful message for debugging purposes"`
-`git push -u orign <your branch>`<span style="color:blue>If its a new branch</span>
+`git push -u orign <your branch>`<span style="color:blue">If its a new branch</span>
 
 ### OR
 
