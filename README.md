@@ -7,12 +7,12 @@ This is what the best way I could think of coming up with the app and ensuring t
 ### medicore-server: This is the backend <a href="https://docs.nestjs.com/">(Nestjs)</a>
 
 To get this repo into you VScode open the folder you want to put it into and do
-
+`git init`
 `git remote add origin <the repo URL>`
 
-And yes thank God I remember before you are any changes please 🙏🏽 create your own branch from the main before doing it you can do that with:
+And yes thank God I remember before you start make any changes please 🙏🏽 create your own branch from the main before doing it you can do that with:
 
-`git branch <your name>`
+`git checkout -b <your name>`
 
 If you need someone's code for example I need to get _David's_ code I look for his branch name and do:
 
@@ -48,3 +48,6 @@ Don't push broken code it affects whoever is pulling your code if you have an is
 Also try your best to comment on your code as much as possible its human beings that are going to be looking at your code please it doesn't have to be long just give little insight to what cetain blocks of code is doing.
 
 That's all I can think of for now but as time passes I might add more to the README. file. Anyways thanks and don't erase or break our code we just have three weeks on this!!!
+
+[!IMPORTANT]
+Please if you have any issues you can contact Mr Babatunde or the other interns.
