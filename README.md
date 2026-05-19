@@ -33,9 +33,11 @@ If you need someone's code for example I need to get _David's_ code I look for h
 For merge conflicts I advice you to set up a meeting with who you have conflicts with to avoid removing or adding unneccesary things.
 
 [!IMPORTANT]
+
 Just in case you haven't caught up don't add angle brackets < or > to the command line when working.
 
 [!TIP]
+
 Not compulsory btw: I'll lwk advice you to get _GitLens_ extension from VScode it allows you to see who edited what and what day/time.
 
 **Also Important:**
