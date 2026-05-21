@@ -1,1 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --Inter: 'Inter', sans-serif;
+}
+* {
+  font-family: var(--Inter);
+  font-weight: 400;
+}
+p {
+  font-size: clamp(1em, 2vw, 4.5em);
+  margin: 0;
+}
+.title {
+  font-weight: 700;
+}
+a {
+  text-decoration: none;
+  outline: none;
+  color: #1e40af;
+}
+a:active {
+  font-weight: 700;
+}
+a:hover {
+  text-decoration: underline;
+}
+input {
+  height: 2.75em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  width: 95%;
+  border: 1px solid #d1d2d6;
+}
+input:focus {
+  outline: 1px solid #415588;
+  box-shadow: 0 0 0 4px #e5e9ef;
+}
+.inputs {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-weight: 500;
+}
+.primary-btn {
+  background-color: #0f172a;
+}
+button:hover {
+  cursor: pointer;
+}

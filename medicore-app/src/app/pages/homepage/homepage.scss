@@ -1,0 +1,22 @@
+p {
+  line-height: 1.9;
+}
+@media (max-width: 1125px) {
+  .laptop-img {
+    display: none;
+  }
+  .phone-img {
+    display: block;
+  }
+}
+@media (min-width: 1125px) {
+  .laptop-img {
+    display: block;
+  }
+  .phone-img {
+    display: none;
+  }
+}
+.laptop-img {
+  min-width: 50%;
+}
