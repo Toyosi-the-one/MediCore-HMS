@@ -1,0 +1,27 @@
+.title {
+  font-family: var(--Inter);
+  //   color: white;
+  font-size: clamp(1em, 3.5vw, 4em);
+  padding-left: 1em;
+  font-weight: 700;
+  margin: 0;
+  padding: 0.5em;
+}
+.navLinks {
+  font-family: var(--Inter);
+  font-weight: 500;
+  font-size: clamp(0.5em, 3.5vw, 1em);
+  display: flex;
+  gap: clamp(0.5em, 3.5vw, 2em);
+  padding-right: 1em;
+  height: 100%;
+}
+a.link {
+  padding: clamp(0.01em, 1vw, 1em);
+  border-radius: 5px;
+  font-size: clamp(1em, 2vw, 4.5em);
+}
+.link:hover {
+  background-color: #d2d9ef;
+  transition: all 0.5s ease;
+}
