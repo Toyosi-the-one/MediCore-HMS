@@ -1,0 +1,125 @@
+<div style="display: flex; width: 100vw; min-height: 100vh; height: 100%">
+  <div
+    style="
+      background-color: #0f172a;
+      width: 36.8%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    "
+    class="left-panel"
+  >
+    <div class="left-panel-content">
+      <div style="display: flex; gap: 0.125em; align-items: center">
+        <img src="Logo.svg" alt="" class="Logo" />
+        <p class="splash-text">Medicare-HMS</p>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: flex-start; gap: 0.75em">
+        <header style="">
+          <p style="font-weight: var(--bold)" class="textWhite">Welcome back to</p>
+          <p style="font-family: var(--Lora); color: var(--accent-color); font-weight: var(--bold)">
+            Medicore-HMS
+          </p>
+        </header>
+        <div>
+          <p class="textWhite" style="font-size: var(font-4); color: var(--grey)">
+            Sign in to access your hospital <br />
+            dashboard, patient records and <br />management tools.
+          </p>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.75em" class="textWhite">
+        <!-- <div style="display: flex; gap: 0.75em; align-items: center">
+          <div class="Icons" style="background-color: var(--grey)"></div>
+          <div>
+            <p>Patient management</p>
+            <p>Records, admissions & discharge</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.75em; align-items: center">
+          <div class="Icons" style="background-color: var(--grey)"></div>
+          <div>
+            <p>Patient management</p>
+            <p>Records, admissions & discharge</p>
+          </div>
+        </div> 
+      
+        <div style="display: flex; gap: 0.75em; align-items: center">
+          <div class="Icons" style="background-color: var(--grey)"></div>
+          <div>
+            <p>Patient management</p>
+            <p>Records, admissions & discharge</p>
+          </div>
+        </div>-->
+        <li>
+          <ol>
+            <p>Patient management</p>
+            <p>Records, admissions & discharge</p>
+          </ol>
+        </li>
+        <li>
+          <ol>
+            <p>Patient management</p>
+            <p>Records, admissions & discharge</p>
+          </ol>
+        </li>
+        <li>
+          <ol>
+            <p>Patient management</p>
+            <p>Records, admissions & discharge</p>
+          </ol>
+        </li>
+      </div>
+    </div>
+  </div>
+  <form style="flex: 1" style="" class="right-panel" [formGroup]="loginDetails">
+    <div>
+      <p style="font-weight: var(--bold)">Sign In</p>
+      <p style="">Enter your work credentials to continue</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 1em">
+      <div>
+        <label for="email">Work Email</label>
+        <div style="display: flex; gap: 0.75em" class="input-wrapper">
+          <img src="email.svg" alt="" style="height: 20px" />
+          <input
+            type="email"
+            placeholder="john.doe@hospital.com"
+            autocomplete="email"
+            formControlName="email"
+          />
+        </div>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <div style="display: flex; gap: 0.75em" class="input-wrapper">
+          <img src="password.svg" alt="" style="height: 20px" />
+          <input
+            type="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            formControlName="password"
+          />
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1em" (click)="Googlelogin()">
+        <a><img src="google-sign-up.svg" alt="Google Sign Up" style="width: 100%" /></a
+        ><span style="color: red; font-weight: bolder">Subject to change</span>
+      </div>
+      <div
+        style="display: flex; justify-content: space-between; font-size: 12px"
+        class="rememberMe-content"
+      >
+        <div style="display: flex; align-items: center">
+          <input type="checkbox" name="" id="rememberMe" />
+          <label for="rememberMe">Remember me for 30 days</label>
+        </div>
+        <div>Forgot password?</div>
+      </div>
+      <div style="">
+        <button class="signInButton" type="submit"><p>Sign In</p></button>
+      </div>
+    </div>
+  </form>
+</div>

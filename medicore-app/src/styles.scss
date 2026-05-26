@@ -1,15 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 :root {
   --Inter: 'Inter', sans-serif;
+  --Lora: 'Lora', serif;
+  --accent-color: #14b8a6;
+  --bold: 700;
+  --font-4: 1.125em;
+  --grey: #afafaf;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+.Logo {
+  height: 45px;
+  width: 45px;
+  border-radius: 8px;
+}
+.Icons {
+  height: 45px;
+  width: 45px;
+  border-radius: 8px;
+}
+.textWhite {
+  color: white;
+}
+html {
+  scroll-behavior: smooth;
 }
 * {
   font-family: var(--Inter);
   font-weight: 400;
+  box-sizing: border-box;
 }
 p {
   font-size: clamp(1em, 2vw, 4.5em);
   margin: 0;
+}
+.splash-text {
+  font-size: clamp(0.75em, 1vw, 1.5em);
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
 }
 .title {
   font-weight: 700;
@@ -23,29 +60,55 @@ a:active {
   font-weight: 700;
 }
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
-input {
-  height: 2.75em;
-  padding-left: 0.3em;
-  padding-right: 0.3em;
-  width: 95%;
-  border: 1px solid #d1d2d6;
-}
-input:focus {
-  outline: 1px solid #415588;
-  box-shadow: 0 0 0 4px #e5e9ef;
-}
+// input {
+//   height: 2.75em;
+//   padding-left: 0.3em;
+//   padding-right: 0.3em;
+//   width: 95%;
+//   border: 1px solid #d1d2d6;
+// }
+// input:focus {
+//   outline: 1px solid #415588;
+//   box-shadow: 0 0 0 4px #e5e9ef;
+// }
 .inputs {
   display: flex;
   width: 100%;
   flex-direction: column;
   gap: 6px;
 }
-
-label {
-  font-weight: 500;
+input[type='email'],
+input[type='password'],
+input[type='text'],
+select {
+  outline: none;
+  border: none;
+  width: 100%;
+  min-width: 0;
+  // background: url('../../../../public/email.svg');
+  // background-repeat: no-repeat;
 }
+.input-wrapper,
+select {
+  display: flex;
+  height: 2.75em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  //   width: 95%;
+  border: 1px solid #d1d2d6;
+  align-items: center;
+  width: 100%;
+}
+.input-wrapper:focus-within {
+  outline: 1px solid #415588;
+  box-shadow: 0 0 0 4px #e5e9ef;
+}
+
+// label {
+//   font-weight: 500;
+// }
 .primary-btn {
   background-color: #0f172a;
 }

@@ -1,0 +1,153 @@
+<div class="layout">
+  <div class="left-panel"></div>
+
+  <div class="right-panel">
+    <div style="display: flex; flex-direction: column; gap: 1.6875em">
+      <div style="display: flex; flex-direction: column">
+        <div style="display: flex; justify-content: space-between">
+          <p>Step 2 of 3</p>
+          <p>Admin Information</p>
+        </div>
+        <progress value="70" max="100"></progress>
+      </div>
+
+      <p>
+        <img src="./userIcon.svg" alt="" />
+        Admin Information
+      </p>
+    </div>
+
+    <div style="display: flex; flex-direction: column">
+      <p>Your personal details</p>
+      <p>This will be your admin profile. You can update it later in settings.</p>
+    </div>
+
+    <!-- Profile upload -->
+    <div style="display: flex; gap: 1em">
+      <div
+        style="
+          border: 2px dashed #4b66bf;
+          border-radius: 100%;
+          width: 70px;
+          height: 70px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <img src="./cameraIcon.svg" alt="" />
+      </div>
+
+      <div style="display: flex; gap: 0.25em; flex-direction: column">
+        <p>Profile photo</p>
+        <p>Jpg or Png Max-500Mb (Optional)</p>
+        <p>Upload file</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <form class="create-user-form" [formGroup]="userDetails" (ngSubmit)="onSubmit()">
+      <!-- FIRST + LAST NAME -->
+      <div style="display: flex; gap: 1.25em">
+        <div style="display: flex; flex-direction: column; width: 100%">
+          <label for="firstName">First Name</label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="firstName"
+              placeholder="First Name"
+              formControlName="firstName"
+            />
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; width: 100%">
+          <label for="lastName">Last Name</label>
+          <div class="input-wrapper">
+            <input type="text" id="lastName" placeholder="Last Name" formControlName="lastName" />
+          </div>
+        </div>
+      </div>
+
+      <!-- TITLE -->
+      <div style="display: flex; flex-direction: column; width: 100%">
+        <label for="title">Title</label>
+        <select id="title" formControlName="title" class="input-wrapper">
+          <option value="" disabled>Select a title</option>
+          <option value="Dr.">Dr.</option>
+          <option value="Mr.">Mr.</option>
+          <option value="Ms.">Ms.</option>
+          <option value="Mrs.">Mrs.</option>
+        </select>
+      </div>
+
+      <!-- EMAIL -->
+      <div style="display: flex; flex-direction: column; width: 100%">
+        <label for="email">Email</label>
+        <div class="input-wrapper">
+          <input type="email" id="email" placeholder="Email" formControlName="email" />
+        </div>
+      </div>
+
+      <!-- PASSWORD -->
+      <div style="display: flex; flex-direction: column; width: 100%">
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            autocomplete="new-password"
+            formControlName="password"
+          />
+        </div>
+      </div>
+
+      <!-- CONFIRM PASSWORD -->
+      <div style="display: flex; flex-direction: column; width: 100%">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="input-wrapper">
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+            autocomplete="new-password"
+            formControlName="confirmPassword"
+          />
+        </div>
+      </div>
+
+      <!-- ROLE -->
+      <div style="display: flex; flex-direction: column; width: 100%">
+        <label for="role">Role</label>
+        <select id="role" formControlName="role" class="input-wrapper">
+          <option value="" disabled>Select a role</option>
+          <option value="Doctor">Doctor</option>
+          <option value="Nurse">Nurse</option>
+          <option value="Receptionist">Receptionist</option>
+          <option value="Patient">Patient</option>
+        </select>
+      </div>
+
+      <!-- BUTTONS -->
+      <div style="display: flex; gap: 1em; height: 3em">
+        <div
+          style="
+            width: 8em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            border: 2px solid #1e40af;
+            height: 100%;
+            max-height: 3em;
+          "
+        >
+          <img src="back-arrow.svg" alt="" />
+        </div>
+
+        <button type="submit">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</div>
