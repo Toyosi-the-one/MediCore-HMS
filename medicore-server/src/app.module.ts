@@ -6,6 +6,7 @@ import { FirebaseModule } from './firebase-init/firebase-module';
 import { FirebaseAuthController } from './firebase-auth/firebase-auth.controller';
 import { FirebaseAuthService } from './firebase-auth/firebase-auth.service';
 import { FirebaseAuthModule } from './firebase-auth/firebase-auth.module';
+import { SessionModule } from './session/session.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { FirebaseAuthModule } from './firebase-auth/firebase-auth.module';
     }),
     FirebaseModule,
     FirebaseAuthModule,
+    SessionModule,
   ],
   controllers: [AppController, FirebaseAuthController],
   providers: [AppService, FirebaseAuthService],

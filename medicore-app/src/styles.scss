@@ -1,3 +1,52 @@
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  height: 100%;
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+  // Source - https://stackoverflow.com/a/61282745
+  // Posted by Morfinismo, modified by community. See post 'Timeline' for change history
+  // Retrieved 2026-05-27, License - CC BY-SA 4.0
+  .whiteSpinner {
+    @include mat.progress-spinner-overrides(
+      (
+        active-indicator-color: #ffffff,
+        //white
+      )
+    );
+  }
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+  height: 100%;
+}
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 :root {
@@ -7,6 +56,7 @@
   --bold: 700;
   --font-4: 1.125em;
   --grey: #afafaf;
+  --base: clamp(1em, 1.0417vw, 2em);
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -38,12 +88,13 @@ html {
   font-weight: 400;
   box-sizing: border-box;
 }
+
 p {
-  font-size: clamp(1em, 2vw, 4.5em);
+  //   font-size: clamp(1em, 2vw, 4.5em);
   margin: 0;
 }
 .splash-text {
-  font-size: clamp(0.75em, 1vw, 1.5em);
+  font-size: 1.5em;
   font-weight: 500;
   color: #fff;
   text-align: center;
@@ -87,6 +138,7 @@ select {
   border: none;
   width: 100%;
   min-width: 0;
+  background: transparent;
   // background: url('../../../../public/email.svg');
   // background-repeat: no-repeat;
 }

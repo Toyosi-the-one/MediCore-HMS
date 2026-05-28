@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -9,19 +9,29 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth/auth-service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+interface Payload {
+  displayName: string | null;
+  title: string | null;
+  role: string | null;
+  email: string | null;
+  password: string | null;
+}
 
 @Component({
   selector: 'app-create-account',
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, MatProgressSpinnerModule],
   templateUrl: './create-account.html',
   styleUrl: './create-account.scss',
 })
 export class CreateAccount {
+  isLoading = false;
+
   constructor(
-    private http: HttpClient,
-    private router: Router,
+    public AuthService: AuthService,
+    private cdr: ChangeDetectorRef,
   ) {}
 
   passwordMatchValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
@@ -48,41 +58,39 @@ export class CreateAccount {
     { validators: this.passwordMatchValidator },
   );
 
-  onSubmit() {
-    console.log('Form valid:', this.userDetails.valid);
-    console.log('Form errors:', this.userDetails.errors);
-    console.log('Form value:', this.userDetails.value);
+  async onSubmit() {
+    if (this.userDetails.invalid) {
+      this.userDetails.markAllAsTouched();
+      return;
+    }
 
-    if (this.userDetails.valid) {
-      console.log('🚀 Sending signup request...');
+    this.isLoading = true;
+    if (this.isLoading) {
+      console.log('This is loading =true');
+    }
+    this.cdr.detectChanges(); // Force UI update
 
-      const payload = {
-        firstName: this.userDetails.get('firstName')?.value,
-        lastName: this.userDetails.get('lastName')?.value,
-        title: this.userDetails.get('title')?.value,
-        role: this.userDetails.get('role')?.value,
-        email: this.userDetails.get('email')?.value,
-        password: this.userDetails.get('password')?.value,
-      };
+    const payload: Payload = {
+      displayName: `${this.userDetails.get('firstName')!.value} ${this.userDetails.get('lastName')!.value}`,
+      title: this.userDetails.get('title')!.value,
+      role: this.userDetails.get('role')!.value?.toLowerCase() ?? null,
+      email: this.userDetails.get('email')!.value,
+      password: this.userDetails.get('password')!.value,
+    };
 
-      console.log('📤 Payload being sent:', payload);
-
-      this.http.post('http://localhost:3000/firebase-auth/signup', payload).subscribe({
-        next: (res: any) => {
-          console.log('✅ NEXT FIRED - Success response:', res);
-          alert('User created successfully! ');
-          console.log(res.user);
-          //this.router.navigate(['login']);
-        },
-        error: (err) => {
-          console.error('❌ ERROR FIRED - Full error object:', err);
-          console.error('❌ Error message:', err?.error?.message || err?.message);
-          console.error('❌ Error details:', err?.error);
-          alert('Error creating user: ' + (err?.error?.message || err?.message || 'Unknown error'));
-        },
-      });
-    } else {
-      console.log('Form is invalid. Check the console logs above.');
+    try {
+      await this.AuthService.createUserWithEmailAndPassword(payload);
+      console.log('✅ Account created successfully!');
+      
+      // Add navigation here if needed
+    } catch (error) {
+      console.error('❌ Registration failed:', error);
+      // TODO: Show error message to user
+    } finally {
+      // Minimum 800ms loading time so user can see the spinner
+      await new Promise((resolve) => setTimeout(resolve, 800));
+      this.isLoading = false;
+      this.cdr.detectChanges();
     }
   }
 }

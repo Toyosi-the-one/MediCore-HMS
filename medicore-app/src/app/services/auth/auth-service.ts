@@ -1,48 +1,151 @@
 import { Injectable } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import {
+  EmailAuthProvider,
+  getAuth,
+  GoogleAuthProvider,
+  linkWithCredential,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from 'firebase/auth';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { doc, getDoc, getFirestore, serverTimestamp, setDoc } from 'firebase/firestore';
+import { firstValueFrom } from 'rxjs';
+
+interface SignupPayload {
+  displayName: string | null;
+  title: string | null;
+  role: string | null;
+  email: string | null;
+  password: string | null;
+}
+
+interface Credentials {
+  email: string;
+  password: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
-  app = initializeApp(environment.firebaseConfig);
+  private app = initializeApp(environment.firebaseConfig);
   private auth = getAuth();
   private provider = new GoogleAuthProvider();
-  Googlelogin() {
-    const apiURL = environment.apiURL;
+  db = getFirestore(this.app);
+  // 🔵 ROLE MODAL STATE
+  public showRoleModal = false;
+  public pendingUser: any = null;
 
-    signInWithPopup(this.auth, this.provider)
-      .then(async (result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        console.log(credential);
+  constructor(
+    private http: HttpClient,
+    public router: Router,
+  ) {}
 
-        const idToken = await result.user.getIdToken();
-
-        const user = result.user;
-        console.log(user);
-
-        this.http
-          .post(`${apiURL}/firebase-auth/googlesignin`, {
-            token: idToken,
-          })
-          .subscribe({
-            next: (response) => console.log(response),
-            error: (err) => console.log(err),
-          });
-      })
-      .catch((error) => {
-        console.error('Error code:', error.code);
-        console.error('Error message:', error.message);
-      });
+  private createSession(idToken: string) {
+    return this.http.post(`${environment.apiURL}/session`, { idToken }, { withCredentials: true });
   }
-  // signup(user: { email: string; password: string }) {
-  //   return createUserWithEmailAndPassword(auth, user.email, user.password);
-  // }
+  async completeOnboarding(role: string, password: string) {
+    if (!this.pendingUser) return;
 
-  // logout() {
-  //   return signOut(auth);
-  // }
+    const user = this.pendingUser;
+    const credentials = EmailAuthProvider.credential(user.email, password);
+    await linkWithCredential(user, credentials);
+    // 🔥 REFRESH USER AFTER LINKING
+    await user.reload();
+    const freshToken = await user.getIdToken(true);
+
+    // 🔥 NOW create session AFTER everything is complete
+    await firstValueFrom(this.createSession(freshToken));
+
+    await setDoc(doc(this.db, 'users', user.uid), {
+      uid: user.uid,
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      role,
+      createdAt: serverTimestamp(),
+    });
+
+    // 🧹 cleanup state
+    this.pendingUser = null;
+    this.showRoleModal = false;
+
+    // 🚀 continue app
+    this.router.navigate(['admin']);
+  }
+  private async checkUserExists(uid: string): Promise<boolean> {
+    const userRef = doc(this.db, 'users', uid);
+    const snap = await getDoc(userRef);
+    return snap.exists();
+  }
+
+  async signInWithGoogle() {
+    try {
+      const result = await signInWithPopup(this.auth, this.provider);
+
+      const user = result.user;
+
+      // 🔥 DEBUG THIS FIRST
+      console.log('Google user:', user);
+
+      console.log('Email:', user.email);
+
+      if (!user.email) {
+        throw new Error('No email returned from Google account');
+      }
+
+      const idToken = await user.getIdToken();
+      await firstValueFrom(this.createSession(idToken));
+
+      const exists = await this.checkUserExists(user.uid);
+
+      if (!exists) {
+        this.pendingUser = user;
+        this.showRoleModal = true;
+        return;
+      }
+
+      this.router.navigate(['admin']);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  // 🟢 EMAIL/PASSWORD SIGN IN
+  async signIn(credentials: Credentials) {
+    try {
+      const response = await signInWithEmailAndPassword(
+        this.auth,
+        credentials.email,
+        credentials.password,
+      );
+
+      const idToken = await response.user.getIdToken();
+
+      await this.createSession(idToken); // Wait for session
+
+      console.log('Login + session successful');
+      this.router.navigate(['admin']);
+    } catch (error: any) {
+      console.error('Login error:', error);
+      throw error; // ←←← THIS WAS MISSING!
+    }
+  }
+
+  // SIGNUP
+  createUserWithEmailAndPassword(payload: SignupPayload) {
+    this.http.post(`${environment.apiURL}/firebase-auth/signup`, payload).subscribe({
+      next: (res: any) => {
+        console.log('Signup success:', res);
+        alert('User created successfully!');
+        this.router.navigate(['login']);
+      },
+      error: (err) => {
+        console.error('Signup error:', err);
+        alert('Error creating user: ' + (err?.error?.message || err?.message || 'Unknown error'));
+      },
+    });
+  }
 }

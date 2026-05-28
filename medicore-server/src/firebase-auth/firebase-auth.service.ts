@@ -9,46 +9,42 @@ export class FirebaseAuthService {
     private readonly firebaseAdmin: admin.app.App,
   ) {}
 
-  async verifyFirebaseToken(token: string) {
-    try {
-      const decoded = await this.firebaseAdmin.auth().verifyIdToken(token);
+  // async verifyFirebaseToken(token: string) {
+  //   try {
+  //     const decoded = await this.firebaseAdmin.auth().verifyIdToken(token);
 
-      const uid = String(decoded.uid || '');
-      const name = String(decoded.name || '');
-      const email = String(decoded.email || '');
-      const picture = String(decoded.picture || '');
+  //     const uid = String(decoded.uid || '');
+  //     const name = String(decoded.name || '');
+  //     const email = String(decoded.email || '');
+  //     const picture = String(decoded.picture || '');
 
-      return {
-        message: 'Token verified successfully',
-        user: { uid, name, email, picture },
-      };
-    } catch (error: unknown) {
-      const errorMessage =
-        error instanceof Error ? error.message : String(error);
-      console.error('🔥 Token verification error:', errorMessage);
-      throw error;
-    }
-  }
+  //     return {
+  //       message: 'Token verified successfully',
+  //       user: { uid, name, email, picture },
+  //     };
+  //   } catch (error: unknown) {
+  //     const errorMessage =
+  //       error instanceof Error ? error.message : String(error);
+  //     console.error('🔥 Token verification error:', errorMessage);
+  //     throw error;
+  //   }
+  // }
 
   async createWithEmailAndPassword({
-    firstName,
-    lastName,
+    displayName,
     email,
     password,
     role,
   }: {
-    firstName: string;
-    lastName: string;
+    displayName: string;
     email: string;
     password: string;
     role: string;
   }) {
     try {
-      const displayName = `${firstName} ${lastName}`;
       console.log('📝 Creating user with:', {
         email,
-        firstName,
-        lastName,
+        displayName,
         role,
       });
 
@@ -68,10 +64,8 @@ export class FirebaseAuthService {
         .set({
           uid: user.uid,
           email: user.email,
-          firstName,
-          lastName,
-          role,
           displayName,
+          role,
           createdAt: new Date(),
         });
       console.log('✅ Firestore profile created for user:', user.uid);

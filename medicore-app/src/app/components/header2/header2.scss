@@ -6,3 +6,16 @@
   align-items: center;
   border-bottom: 1px solid #cbcbcb;
 }
+.collapsible {
+  display: none;
+}
+@media (min-width: 720px) {
+  .hamburger {
+    display: none;
+  }
+  .collapsible {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+}

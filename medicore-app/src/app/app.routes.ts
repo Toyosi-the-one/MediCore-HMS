@@ -4,6 +4,7 @@ import { AdminDashboard } from './pages/admin-dashboard/admin-dashboard';
 import { LandingPage } from './pages/landing-page/landing-page';
 import { SigninPage } from './pages/signin-page/signin-page';
 import { CreateAccount } from './pages/create-account/create-account';
+import { sessionCheckGuard } from './guards/session-check-guard';
 
 export const routes: Routes = [
   {
@@ -17,6 +18,7 @@ export const routes: Routes = [
   {
     path: 'admin',
     component: AdminDashboard,
+    canActivate: [sessionCheckGuard],
   },
   {
     path: 'login',
