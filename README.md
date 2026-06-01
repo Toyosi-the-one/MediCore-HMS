@@ -6,6 +6,15 @@ This is what the best way I could think of coming up with the app and ensuring t
 
 ### medicore-server: This is the backend <a href="https://docs.nestjs.com/">(Nestjs)</a>
 
+## Local demo data
+
+The Angular app can run with in-memory demo patients and appointments, so you can test the receptionist and patient flows without depending on live Firestore data.
+
+- Demo mode is controlled by `useDemoData` in `medicore-app/src/environments/environment.ts`.
+- `useDemoData: true` loads sample patients, appointments, and today's queue locally.
+- `useDemoData: false` switches the app back to Firestore.
+- Sample patient lookup phone numbers include `08031234567`, `08039876543`, `08123456780`, `08111112222`, and `07045556666`.
+
 To get this repo into you VScode open the folder you want to put it into and do
 `git init`
 
