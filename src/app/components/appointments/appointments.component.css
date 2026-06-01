@@ -1,0 +1,42 @@
+.status-filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #64748b;
+  transition: all 0.15s;
+}
+
+.filter-btn:hover {
+  border-color: #93c5fd;
+  color: #2563eb;
+}
+
+.filter-btn.active {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.truncate-cell {
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.action-btns {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+}

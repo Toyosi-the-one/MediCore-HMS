@@ -1,0 +1,44 @@
+.drug-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.drug-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.qty-ok {
+  font-weight: 600;
+  color: #16a34a;
+}
+
+.qty-low {
+  font-weight: 600;
+  color: #ea580c;
+}
+
+.expiry-expired {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.expiry-soon {
+  color: #ea580c;
+  font-weight: 600;
+}
+
+.action-btns {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+}
