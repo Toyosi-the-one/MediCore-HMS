@@ -1,23 +1,31 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Req,
+  UseGuards,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { FirebaseAuthService } from './firebase-auth.service';
 import type { EmailandPasswordDto } from './loginDTO';
-// By the way I wanted to setup logging in using email and password and email but I could
-// only do it in Admin SDK by setting up a REST API which would require more boilerplate
-// than I want to handle.
+import { SessionGuard } from '../session/session.guard';
+import type { Request } from 'express';
+
 @Controller('firebase-auth')
-/*The main controller for auth */
 export class FirebaseAuthController {
   constructor(private readonly authService: FirebaseAuthService) {}
-  /*  Important note here */
-  // @Post(
-  //   'googlesignin',
-  // ) /*For verifying the token sent by the client after Google Sign-In*/
-  // async firebaseLogin(@Body() body: { token: string }) {
-  //   return await this.authService.verifyFirebaseToken(body.token);
-  // }
 
-  @Post('signup') /*For creating a user I am using Firebase Admin SDK*/
+  @Post('signup')
   async register(@Body() body: EmailandPasswordDto) {
-    return await this.authService.createWithEmailAndPassword(body);
+    return this.authService.createWithEmailAndPassword(body);
+  }
+
+  @UseGuards(SessionGuard)
+  @Get('me')
+  async getMe(@Req() req: Request & { user?: { uid?: string } }) {
+    const uid = req.user?.uid;
+    if (!uid) throw new UnauthorizedException('No authenticated user');
+    return this.authService.getUserProfile(uid);
   }
 }

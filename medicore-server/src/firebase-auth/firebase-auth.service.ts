@@ -91,4 +91,46 @@ export class FirebaseAuthService {
       throw error;
     }
   }
+  async getUserProfile(uid: string) {
+    const userRef = this.firebaseAdmin.firestore().collection('users').doc(uid);
+
+    const userDoc = await userRef.get();
+
+    if (!userDoc.exists) {
+      return {
+        exists: false,
+        message: 'User does not exist in Firestore',
+      };
+    }
+
+    const data = userDoc.data();
+
+    const email = typeof data?.email === 'string' ? data.email : null;
+    const displayName =
+      typeof data?.displayName === 'string' ? data.displayName : null;
+    const role = typeof data?.role === 'string' ? data.role : null;
+    const photoURL = typeof data?.photoURL === 'string' ? data.photoURL : null;
+    let createdAt: Date | null = null;
+    const createdRaw = data?.createdAt as unknown;
+
+    function isTimestamp(v: unknown): v is FirebaseFirestore.Timestamp {
+      return !!v && typeof (v as Record<string, unknown>).toDate === 'function';
+    }
+
+    if (createdRaw instanceof Date) {
+      createdAt = createdRaw;
+    } else if (isTimestamp(createdRaw)) {
+      createdAt = createdRaw.toDate();
+    }
+
+    return {
+      exists: true,
+      uid,
+      email,
+      displayName,
+      role,
+      photoURL,
+      createdAt,
+    };
+  }
 }

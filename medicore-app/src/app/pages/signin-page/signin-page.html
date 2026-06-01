@@ -43,7 +43,7 @@
         </div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 0.75em" class="textWhite">
-        <div style="" class="featuresIcons">
+        <div class="featuresIcons">
           <div style="display: flex; gap: 0.75em; align-items: center">
             <div class="Icons" style="background-color: var(--grey)"></div>
             <div>
@@ -90,10 +90,10 @@
       </div>
     </div>
   </div>
-  <form style="flex: 1" style="" class="right-panel" [formGroup]="loginDetails">
+  <form style="flex: 1" class="right-panel" [formGroup]="loginDetails">
     <div>
       <p style="font-weight: var(--bold)">Sign In</p>
-      <p style="">Enter your work credentials to continue</p>
+      <p>Enter your work credentials to continue</p>
     </div>
     <div style="display: flex; flex-direction: column; gap: 1em">
       <div>
@@ -144,15 +144,9 @@
           <div><p>Forgot password?</p></div>
         </div>
       </div>
-      @if (emptyEmail) {
-        <p style="color: red">An email is required</p>
-      }
-      @if (emptyPassword) {
-        <p style="color: red">A password is required</p>
-      }
-      <!-- @if (!properEmail) {
-        <p style="color: red">A proper email is required</p>
-      } -->
+      <p *ngIf="emptyEmail" style="color: red">An email is required</p>
+      <p *ngIf="emptyPassword" style="color: red">A password is required</p>
+      <!-- <p *ngIf="invalidEmail" style="color: red">A proper email is required</p> -->
 
       <button
         (click)="login()"
@@ -170,57 +164,54 @@
           height: 3em;
         "
       >
-        @if (isLoading) {
-          <mat-progress-spinner
-            mode="indeterminate"
-            color="accent"
-            diameter="24"
-            class="whiteSpinner"
-          ></mat-progress-spinner>
-        }
+        <mat-progress-spinner
+          *ngIf="isLoading"
+          mode="indeterminate"
+          color="accent"
+          diameter="24"
+          class="whiteSpinner"
+        ></mat-progress-spinner>
         <p class="textWhite">{{ isLoading ? 'Loading...' : 'Sign In' }}</p>
       </button>
     </div>
-    @if (auth.showRoleModal) {
-      <div class="modal-overlay">
-        <div class="modal" style="display: flex; flex-direction: column">
-          <label for="role">Role</label>
+    <div *ngIf="auth.showRoleModal" class="modal-overlay">
+      <div class="modal" style="display: flex; flex-direction: column">
+        <label for="role">Role</label>
 
-          <select id="role" #roleSelect class="input-wrapper">
-            <option value="" disabled selected>Select a role</option>
-            <option value="Doctor">Doctor</option>
-            <option value="Nurse">Nurse</option>
-            <option value="Receptionist">Receptionist</option>
-            <option value="Patient">Patient</option>
-          </select>
-          <div>
-            <label for="password">Password</label>
-            <div style="display: flex; gap: 0.75em" class="input-wrapper">
-              <img src="password.svg" alt="" style="height: 20px" />
-              <input
-                type="password"
-                placeholder="Enter your password"
-                autocomplete="current-password"
-                #password
-              />
-            </div>
+        <select id="role" #roleSelect class="input-wrapper">
+          <option value="" disabled selected>Select a role</option>
+          <option value="Doctor">Doctor</option>
+          <option value="Nurse">Nurse</option>
+          <option value="Receptionist">Receptionist</option>
+          <option value="Patient">Patient</option>
+        </select>
+        <div>
+          <label for="password">Password</label>
+          <div style="display: flex; gap: 0.75em" class="input-wrapper">
+            <img src="password.svg" alt="" style="height: 20px" />
+            <input
+              type="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              #password
+            />
           </div>
-          <button
-            type="button"
-            (click)="auth.completeOnboarding(roleSelect.value, password.value)"
-            style="
-              background-color: var(--accent-color);
-              color: white;
-              border: none;
-              padding: 0.75em 1.5em;
-              border-radius: 8px;
-              margin-top: 1em;
-            "
-          >
-            Continue
-          </button>
         </div>
+        <button
+          type="button"
+          (click)="auth.completeOnboarding(roleSelect.value, password.value)"
+          style="
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.75em 1.5em;
+            border-radius: 8px;
+            margin-top: 1em;
+          "
+        >
+          Continue
+        </button>
       </div>
-    }
+    </div>
   </form>
 </div>

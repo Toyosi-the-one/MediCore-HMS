@@ -1,11 +1,18 @@
 import { Module } from '@nestjs/common';
 import { FirebaseService } from './firebase-healthCheck-service';
 import { FirebaseController } from './firebase-controller';
-import { FirebaseProvider } from './firebase-provider';
+import {
+  FirebaseAdminProvider,
+  FirebaseFirestoreProvider,
+} from './firebase-provider';
 
 @Module({
-  providers: [FirebaseService, FirebaseProvider],
+  providers: [
+    FirebaseService,
+    FirebaseAdminProvider,
+    FirebaseFirestoreProvider,
+  ],
   controllers: [FirebaseController],
-  exports: [FirebaseProvider],
+  exports: [FirebaseAdminProvider, FirebaseFirestoreProvider],
 })
 export class FirebaseModule {}

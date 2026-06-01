@@ -12,11 +12,14 @@
         <p>{{ this.currentDate }}</p>
       </div>
       <div class="dashboard-cards-container">
-        <app-dashboard-cards title="Total Patients" category="patients" />
-        <app-dashboard-cards title="TODAY’S APPOINTMENTS" category="patients" />
-        <app-dashboard-cards title="Total Patients" category="patients" />
-        <app-dashboard-cards title="Total Patients" category="patients" />
+        <app-dashboard-cards title="Total Patients" emptyText="No new patients" />
+        <app-dashboard-cards title="ACTIVE" emptyText="None admitted" />
+        <app-dashboard-cards title="PENDING" emptyText="None awaiting" />
+        <app-dashboard-cards title="CRITICAL" emptyText="None critical" />
+        <app-dashboard-cards title="DISCHARGED" emptyText="None discharged" />
       </div>
     </div>
-  </div>
+<app-patients-list/>
+
+</div>
 </main>

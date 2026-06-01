@@ -176,14 +176,13 @@
             height: 3em;
           "
         >
-          @if (isLoading) {
-            <mat-progress-spinner
-              mode="indeterminate"
-              color="accent"
-              diameter="24"
-              class="whiteSpinner"
-            ></mat-progress-spinner>
-          }
+          <mat-progress-spinner
+            *ngIf="isLoading"
+            mode="indeterminate"
+            color="accent"
+            diameter="24"
+            class="whiteSpinner"
+          ></mat-progress-spinner>
           <p class="textWhite">{{ isLoading ? 'Loading...' : 'Sign Up' }}</p>
         </button>
       </div>

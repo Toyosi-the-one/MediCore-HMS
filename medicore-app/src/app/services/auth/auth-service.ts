@@ -31,7 +31,7 @@ interface Credentials {
   providedIn: 'root',
 })
 export class AuthService {
-  private app = initializeApp(environment.firebaseConfig);
+  public app = initializeApp(environment.firebaseConfig);
   private auth = getAuth();
   private provider = new GoogleAuthProvider();
   db = getFirestore(this.app);
@@ -124,7 +124,7 @@ export class AuthService {
 
       const idToken = await response.user.getIdToken();
 
-      await this.createSession(idToken); // Wait for session
+      await firstValueFrom (this.createSession(idToken)); // Wait for session
 
       console.log('Login + session successful');
       this.router.navigate(['admin']);

@@ -9,22 +9,20 @@ export const sessionCheckGuard: CanActivateFn = () => {
   const router = inject(Router);
 
   return http
-    .get<{ cookie: boolean }>(`${environment.apiURL}/session`, {
+    .get<{ success: boolean }>(`${environment.apiURL}/session`, {
       withCredentials: true,
     })
     .pipe(
       map((res) => {
-        if (res.cookie) {
+        if (res.success === true) {
+          console.log(false);
           return true;
         }
-        alert('You are not logged in');
-        router.navigate(['/login']);
-        return false;
+        return router.createUrlTree(['/login']); // ✅ let the router handle it
       }),
-      catchError(() => {
-        alert('There was an error, Please log in again');
-        router.navigate(['/login']);
-        return of(false);
+      catchError((err) => {
+        console.error('Session check failed:', err); // ✅ use console, not alert
+        return of(router.createUrlTree(['/login'])); // ✅ same here
       }),
     );
 };

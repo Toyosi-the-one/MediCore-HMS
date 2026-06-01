@@ -1,4 +1,5 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
+import { NgIf } from '@angular/common';
 import {
   FormsModule,
   FormGroup,
@@ -8,11 +9,11 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../../services/auth/auth-service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { RouterLink } from "@angular/router";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-signin-page',
-  imports: [FormsModule, ReactiveFormsModule, MatProgressSpinnerModule, RouterLink],
+  imports: [NgIf, FormsModule, ReactiveFormsModule, MatProgressSpinnerModule, RouterLink],
   templateUrl: './signin-page.html',
   styleUrl: './signin-page.scss',
 })

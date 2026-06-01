@@ -12,6 +12,7 @@ async function bootstrap() {
     origin: ['http://localhost:4200'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
+    sameSite: 'lax',
   });
 
   app.useGlobalFilters(new AllExceptionsFilter());

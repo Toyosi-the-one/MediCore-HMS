@@ -57,6 +57,9 @@ body {
   --font-4: 1.125em;
   --grey: #afafaf;
   --base: clamp(1em, 1.0417vw, 2em);
+  --bg-color-blue: #0f172a;
+  --font-1: 0.75em;
+  --font-2: 0.875em;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -66,6 +69,12 @@ select:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px white inset !important;
   -webkit-text-fill-color: #000 !important;
   transition: background-color 9999s ease-in-out 0s;
+}
+* {
+  line-height: normal;
+}
+body.no-scroll {
+  overflow: hidden;
 }
 .Logo {
   height: 45px;

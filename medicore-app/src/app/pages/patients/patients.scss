@@ -11,6 +11,9 @@ main {
 
 .right-panel {
   flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media (max-width: 720px) {
