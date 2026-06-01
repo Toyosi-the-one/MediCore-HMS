@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "cd medicore-app && npx ng serve",
+    "build": "cd medicore-app && npx ng build",
+    "watch": "cd medicore-app && npx ng build --watch --configuration development",
+    "test": "cd medicore-app && npx ng test"
   },
   "private": true,
   "packageManager": "npm@10.9.8",
