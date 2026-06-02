@@ -169,5 +169,5 @@ export const routes: Routes = [
   },
 
   // Catch-all
-  // { path: '**', redirectTo: '/receptionist/dashboard' },
+  { path: '**', redirectTo: '/receptionist/dashboard' },
 ];

@@ -1,33 +1,37 @@
-import { Injectable, signal, computed, inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, signal, computed, inject, PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Firestore, collection, query, where, getDocs } from '@angular/fire/firestore';
+
+import { getFirestore, collection, query, where, getDocs, Firestore } from 'firebase/firestore';
+
 import { ReceptionistService, Patient } from './receptionist.service';
+import { FIRESTORE } from '../../app.config';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-/**
- * PatientSessionService
- * Manages the current patient's authentication state within the Patient Portal.
- * It uses localStorage to persist the session across browser reloads, and
- * provides derived signals to easily access the logged-in patient's data throughout the app.
- */
 export class PatientSessionService {
   private platformId = inject(PLATFORM_ID);
   private receptionistService = inject(ReceptionistService);
-  private firestore = inject(Firestore);
 
-  // Core state: the logged-in patient ID
+  // ----------------------------
+  // STATE
+  // ----------------------------
   currentPatientId = signal<string | null>(null);
 
-  // Derived state: the full patient object
+  // ----------------------------
+  // DERIVED STATE
+  // ----------------------------
   currentPatient = computed<Patient | null>(() => {
     const id = this.currentPatientId();
     if (!id) return null;
-    return this.receptionistService.patients().find(p => p.id === id) || null;
+
+    return this.receptionistService.patients().find((p) => p.id === id) || null;
   });
 
-  constructor() {
+  // ----------------------------
+  // INIT
+  // ----------------------------
+  constructor(@Inject(FIRESTORE) private db: Firestore) {
     if (isPlatformBrowser(this.platformId)) {
       const savedId = localStorage.getItem('medicore_patient_id');
       if (savedId) {
@@ -36,6 +40,9 @@ export class PatientSessionService {
     }
   }
 
+  // ----------------------------
+  // SET PATIENT
+  // ----------------------------
   setPatient(id: string) {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('medicore_patient_id', id);
@@ -43,6 +50,9 @@ export class PatientSessionService {
     this.currentPatientId.set(id);
   }
 
+  // ----------------------------
+  // CLEAR PATIENT
+  // ----------------------------
   clearPatient() {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.removeItem('medicore_patient_id');
@@ -50,22 +60,30 @@ export class PatientSessionService {
     this.currentPatientId.set(null);
   }
 
-  // Looks up a patient by phone number.
-  // Fast path: uses the in-memory signal when already loaded.
-  // Cold-load fallback: queries Firestore directly when the signal is still empty
-  // (avoids incorrectly sending a registered patient to the registration screen
-  //  on a fresh page load before the onSnapshot has resolved).
+  // ----------------------------
+  // FIRESTORE LOOKUP (Firebase SDK)
+  // ----------------------------
   async findPatientByPhone(phone: string): Promise<Patient | null> {
-    const patients = this.receptionistService.patients();
-    if (patients.length > 0) {
-      return patients.find(p => p.phone === phone) || null;
+    const cached = this.receptionistService.patients();
+
+    // fast path (in-memory)
+    if (cached.length > 0) {
+      return cached.find((p) => p.phone === phone) || null;
     }
 
-    // Patients signal is empty — fall back to a direct Firestore query
-    const q = query(collection(this.firestore, 'patients'), where('phone', '==', phone));
+    // Firestore query (SDK)
+    const patientsRef = collection(this.db, 'patients');
+    const q = query(patientsRef, where('phone', '==', phone));
+
     const snap = await getDocs(q);
+
     if (snap.empty) return null;
-    const d = snap.docs[0];
-    return { id: d.id, ...d.data() } as Patient;
+
+    const doc = snap.docs[0];
+
+    return {
+      id: doc.id,
+      ...(doc.data() as Patient),
+    };
   }
 }

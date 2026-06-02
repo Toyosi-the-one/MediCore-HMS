@@ -4,7 +4,10 @@
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
+@use "tailwindcss";
 
+/* Google Fonts - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 html {
   height: 100%;
   @include mat.theme(
@@ -176,10 +179,7 @@ select {
 button:hover {
   cursor: pointer;
 }
-@use "tailwindcss";
 
-/* Google Fonts - Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* =============================================
    MEDICORE HMS — DESIGN SYSTEM (from Figma)

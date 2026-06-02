@@ -1,19 +1,16 @@
-import { Injectable } from '@angular/core';
-import { AuthService } from '../auth/auth-service';
-import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
+import { Injectable, Inject } from '@angular/core';
+import { getFirestore, collection, onSnapshot, Firestore } from 'firebase/firestore';
 import { BehaviorSubject } from 'rxjs';
+import { FIRESTORE } from '../../app.config';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FirestoreService {
-  private db;
-
   private patientsSubject = new BehaviorSubject<any[]>([]);
   patients$ = this.patientsSubject.asObservable();
 
-  constructor(private authService: AuthService) {
-    this.db = getFirestore(this.authService.app);
+  constructor(@Inject(FIRESTORE) private db: Firestore) {
     this.listenToPatients();
   }
 

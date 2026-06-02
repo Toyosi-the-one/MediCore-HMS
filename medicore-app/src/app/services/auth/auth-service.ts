@@ -1,5 +1,4 @@
-import { Injectable } from '@angular/core';
-import { initializeApp } from 'firebase/app';
+import { Injectable, Inject } from '@angular/core';
 import {
   EmailAuthProvider,
   getAuth,
@@ -11,8 +10,9 @@ import {
 import { environment } from '../../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { doc, getDoc, getFirestore, serverTimestamp, setDoc } from 'firebase/firestore';
+import { doc, getDoc, serverTimestamp, setDoc, Firestore } from 'firebase/firestore';
 import { firstValueFrom } from 'rxjs';
+import { FIRESTORE } from '../../app.config';
 
 interface SignupPayload {
   displayName: string | null;
@@ -31,10 +31,8 @@ interface Credentials {
   providedIn: 'root',
 })
 export class AuthService {
-  public app = initializeApp(environment.firebaseConfig);
   private auth = getAuth();
   private provider = new GoogleAuthProvider();
-  db = getFirestore(this.app);
   // 🔵 ROLE MODAL STATE
   public showRoleModal = false;
   public pendingUser: any = null;
@@ -42,6 +40,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     public router: Router,
+    @Inject(FIRESTORE) public db: Firestore,
   ) {}
 
   private createSession(idToken: string) {
