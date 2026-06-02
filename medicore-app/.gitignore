@@ -42,3 +42,8 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Firebase / Environment credentials
+# environment.ts is already tracked, but prevent future production/staging env files from being committed
+src/environments/environment.prod.ts
+src/environments/environment.staging.ts

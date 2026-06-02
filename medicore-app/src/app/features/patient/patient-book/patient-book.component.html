@@ -1,0 +1,99 @@
+<div class="book-page">
+  <div class="page-header">
+    <h1 class="page-title">Book Appointment</h1>
+    <p class="page-subtitle">Schedule a new visit with our specialists.</p>
+  </div>
+
+  <div class="card">
+    @if (errorMsg()) {
+      <div class="alert alert-error">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        {{ errorMsg() }}
+      </div>
+    }
+
+    <form [formGroup]="apptForm" (ngSubmit)="onSubmit()" class="mc-form form-grid">
+      
+      <!-- Department Selection -->
+      <div class="form-group" style="grid-column: 1 / -1">
+        <label class="form-label">Select Department <span class="required">*</span></label>
+        <select formControlName="department" class="form-input" [class.error]="hasError('department')">
+          <option value="">Select a department...</option>
+          @for (dept of departments; track dept) {
+            <option [value]="dept">{{ dept }}</option>
+          }
+        </select>
+        @if (hasError('department')) { <div class="error-msg">Please select a department</div> }
+      </div>
+
+      <!-- Doctor Selection -->
+      @if (apptForm.get('department')?.value) {
+        <div class="form-group" style="grid-column: 1 / -1">
+          <label>Select Doctor</label>
+          <div class="doctor-grid">
+            @for (doc of availableDoctors(); track doc) {
+              <label class="doctor-card" [class.selected]="apptForm.get('doctor')?.value === doc">
+                <input type="radio" formControlName="doctor" [value]="doc" class="hidden-radio">
+                <div class="doc-avatar">
+                  {{ doc.charAt(4) }}
+                </div>
+                <div class="doc-info">
+                  <h4>{{ doc }}</h4>
+                  <p>{{ apptForm.get('department')?.value }}</p>
+                </div>
+              </label>
+            }
+          </div>
+          @if (hasError('doctor')) { <div class="error-msg">Please select a doctor</div> }
+        </div>
+      }
+
+      <!-- Date Selection -->
+      <div class="form-group">
+        <label class="form-label">Date <span class="required">*</span></label>
+        <input type="date" formControlName="date" class="form-input" [min]="minDate" [class.error]="hasError('date')">
+        @if (hasError('date')) { <div class="error-msg">Please select a date</div> }
+      </div>
+
+      <!-- Time Selection -->
+      <div class="form-group" style="grid-column: 1 / -1">
+        <label class="form-label">Time Slot <span class="required">*</span></label>
+        @if (!apptForm.get('date')?.value || !apptForm.get('doctor')?.value) {
+          <div class="slot-hint">Please select a doctor and date first to see available slots.</div>
+        } @else {
+          <div class="slot-grid">
+            @for (slot of timeSlots; track slot) {
+              <label class="slot-card" 
+                     [class.selected]="apptForm.get('time')?.value === slot"
+                     [class.disabled]="isSlotDisabled(slot)">
+                <input type="radio" formControlName="time" [value]="slot" class="hidden-radio" [disabled]="isSlotDisabled(slot)">
+                {{ slot }}
+              </label>
+            }
+          </div>
+          @if (hasError('time')) { <div class="error-msg">Please select a time slot</div> }
+        }
+      </div>
+
+      <!-- Reason -->
+      <div class="form-group" style="grid-column: 1 / -1">
+        <label class="form-label">Reason for Visit <span class="required">*</span></label>
+        <textarea formControlName="reason" class="form-input" rows="3" placeholder="Briefly describe your symptoms or reason for visit..." [class.error]="hasError('reason')"></textarea>
+        @if (hasError('reason')) { <div class="error-msg">Please provide a reason</div> }
+      </div>
+
+      <div class="form-actions" style="grid-column: 1 / -1">
+        <button type="submit" class="btn btn-primary" [disabled]="isLoading()">
+          @if (isLoading()) {
+            <span class="spinner"></span> Booking...
+          } @else {
+            Confirm Appointment
+          }
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -1,0 +1,124 @@
+<div class="dashboard-page">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">Reception Dashboard</h1>
+      <p class="page-subtitle">{{ today }}</p>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-tertiary" routerLink="/receptionist/appointments/new">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        Schedule Appointment
+      </button>
+      <button class="btn btn-primary" routerLink="/receptionist/patients/new">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+        Register Patient
+      </button>
+    </div>
+  </div>
+
+  <!-- Stat Cards -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-card__label">Total Today</span>
+      <div class="stat-card__body">
+        @if (isLoading()) {
+          <div style="height: 32px; width: 60px; border-radius: 4px; background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite;"></div>
+        } @else {
+          <span class="stat-card__value">{{ stats().total }}</span>
+          <span class="stat-card__sub">Patients</span>
+        }
+      </div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-card__label">Waiting</span>
+      <div class="stat-card__body">
+        @if (isLoading()) {
+          <div style="height: 32px; width: 60px; border-radius: 4px; background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite;"></div>
+        } @else {
+          <span class="stat-card__value">{{ stats().waiting }}</span>
+          <span class="stat-card__sub">In queue</span>
+        }
+      </div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-card__label">With Doctor</span>
+      <div class="stat-card__body">
+        @if (isLoading()) {
+          <div style="height: 32px; width: 60px; border-radius: 4px; background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite;"></div>
+        } @else {
+          <span class="stat-card__value">{{ stats().withDoctor }}</span>
+          <span class="stat-card__trend stat-card__trend--up">● Active</span>
+        }
+      </div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-card__label">Completed</span>
+      <div class="stat-card__body">
+        @if (isLoading()) {
+          <div style="height: 32px; width: 60px; border-radius: 4px; background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite;"></div>
+        } @else {
+          <span class="stat-card__value">{{ stats().completed }}</span>
+          <span class="stat-card__trend stat-card__trend--up">↑ Done</span>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-split">
+    <!-- Left: Next in Line -->
+    <div class="card next-in-line-card">
+      <div class="card-header">
+        <h2 class="card-title">Next in Line</h2>
+        <a routerLink="/receptionist/queue" class="view-all-link">Manage Queue →</a>
+      </div>
+      @if (isLoading()) {
+        <div class="skeleton-wrap">
+          @for (i of [1,2,3]; track i) {
+            <div class="skeleton-row"></div>
+          }
+        </div>
+      } @else {
+        <div class="list-group">
+          @for (patient of nextInLine(); track patient.id) {
+            <div class="list-item">
+              <div class="list-item-avatar">{{ patient.patientName[0] | uppercase }}</div>
+              <div class="list-item-content">
+                <div class="list-item-title">{{ patient.patientName }}</div>
+                <div class="list-item-subtitle">{{ patient.department }} • {{ patient.doctor }}</div>
+              </div>
+              <div class="list-item-time">{{ patient.appointmentTime }}</div>
+            </div>
+          } @empty {
+            <div class="empty-state">No patients currently waiting.</div>
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Right: Doctors on Duty -->
+    <div class="card doctors-card">
+      <div class="card-header">
+        <h2 class="card-title">Doctors on Duty</h2>
+      </div>
+      <div class="list-group">
+        @for (doc of doctorsOnDuty; track doc.doctor) {
+          <div class="list-item">
+            <div class="list-item-content">
+              <div class="list-item-title">{{ doc.doctor }}</div>
+              <div class="list-item-subtitle">{{ doc.department }}</div>
+            </div>
+            <span class="status-dot" [class]="doc.status === 'Available' ? 'status-green' : (doc.status === 'Busy' ? 'status-orange' : 'status-red')"></span>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+</div>
