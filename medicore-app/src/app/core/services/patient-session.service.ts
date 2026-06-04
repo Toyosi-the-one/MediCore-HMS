@@ -63,27 +63,27 @@ export class PatientSessionService {
   // ----------------------------
   // FIRESTORE LOOKUP (Firebase SDK)
   // ----------------------------
-  async findPatientByPhone(phone: string): Promise<Patient | null> {
-    const cached = this.receptionistService.patients();
+  // async findPatientByPhone(phone: string): Promise<Patient | null> {
+  //   const cached = this.receptionistService.patients();
 
-    // fast path (in-memory)
-    if (cached.length > 0) {
-      return cached.find((p) => p.phone === phone) || null;
-    }
+  //   // fast path (in-memory)
+  //   if (cached.length > 0) {
+  //     return cached.find((p) => p.phone === phone) || null;
+  //   }
 
-    // Firestore query (SDK)
-    const patientsRef = collection(this.db, 'patients');
-    const q = query(patientsRef, where('phone', '==', phone));
+  //   // Firestore query (SDK)
+  //   const patientsRef = collection(this.db, 'patients');
+  //   const q = query(patientsRef, where('phone', '==', phone));
 
-    const snap = await getDocs(q);
+  //   const snap = await getDocs(q);
 
-    if (snap.empty) return null;
+  //   if (snap.empty) return null;
 
-    const doc = snap.docs[0];
+  //   const doc = snap.docs[0];
 
-    return {
-      id: doc.id,
-      ...(doc.data() as Patient),
-    };
-  }
+  //   return {
+  //     id: doc.id,
+  //     ...(doc.data() as Patient),
+  //   };
+  // }
 }

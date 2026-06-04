@@ -9,7 +9,7 @@ export class UserDetailsStore {
 
   set(data: any) {
     this._userDetails.set(data);
-    console.log('User details updated in store:', this._userDetails());
+    // console.log('User details updated in store:', this._userDetails());
   }
 
 

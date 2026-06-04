@@ -54,7 +54,7 @@ export class EditPatientComponent implements OnInit {
       this.form.patchValue(patient);
     } else {
       this.toastService.error('Not Found', 'Could not find patient record.');
-      this.router.navigate(['/receptionist/patients']);
+      this.router.navigate(['/user/patients']);
     }
   }
 
@@ -84,7 +84,7 @@ export class EditPatientComponent implements OnInit {
       try {
         await this.receptionistService.updatePatient(this.patientId()!, v);
         this.toastService.success('Patient Updated', `${v.firstName} ${v.lastName}'s profile has been updated.`);
-        this.router.navigate(['/receptionist/patients']);
+        this.router.navigate(['/user/patients']);
       } catch (err) {
         this.toastService.error('Update Failed', (err as any).message || 'Could not update patient.');
       } finally {
@@ -96,6 +96,6 @@ export class EditPatientComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate(['/receptionist/patients']);
+    this.router.navigate(['/user/patients']);
   }
 }

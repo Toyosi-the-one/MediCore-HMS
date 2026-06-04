@@ -6,7 +6,7 @@
       <h1 class="page-title">Patients</h1>
       <p class="page-subtitle">Manage and view all registered patients in MediCore.</p>
     </div>
-    <button class="btn btn-primary" routerLink="/receptionist/patients/new">
+    <button class="btn btn-primary" routerLink="/user/patients/new">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
       </svg>
@@ -193,13 +193,13 @@
                 <td>
                   <div class="action-group">
                     <!-- View (placeholder for patient profile) -->
-                    <button class="action-btn" title="View Profile" routerLink="/receptionist/patients/edit/{{ patient.id }}">
+                    <button class="action-btn" title="View Profile" routerLink="/user/patients/edit/{{ patient.id }}">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
                       </svg>
                     </button>
                     <!-- Edit -->
-                    <button class="action-btn" title="Edit Patient" routerLink="/receptionist/patients/edit/{{ patient.id }}">
+                    <button class="action-btn" title="Edit Patient" routerLink="/user/patients/edit/{{ patient.id }}">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
                         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
@@ -214,7 +214,7 @@
                       </button>
                       @if (openDropdownId() === patient.id) {
                         <div class="dropdown-menu" (click)="$event.stopPropagation()">
-                          <a class="dropdown-item" routerLink="/receptionist/appointments/new" [queryParams]="{ patientId: patient.id }" (click)="openDropdownId.set(null)">
+                          <a class="dropdown-item" routerLink="/user/appointments/new" [queryParams]="{ patientId: patient.id }" (click)="openDropdownId.set(null)">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                               <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
                             </svg>
@@ -239,7 +239,7 @@
                       <button class="btn btn-tertiary" (click)="clearAllFilters()" style="margin-top: 8px;">Clear filters</button>
                     } @else {
                       <p>No patients registered yet.</p>
-                      <a routerLink="/receptionist/patients/new" class="btn btn-primary" style="margin-top: 12px; display: inline-flex;">Register first patient →</a>
+                      <a routerLink="/user/patients/new" class="btn btn-primary" style="margin-top: 12px; display: inline-flex;">Register first patient →</a>
                     }
                   </div>
                 </td>
@@ -267,11 +267,11 @@
                 </button>
                 @if (openDropdownId() === patient.id) {
                   <div class="dropdown-menu" (click)="$event.stopPropagation()">
-                    <a class="dropdown-item" routerLink="/receptionist/patients/edit/{{ patient.id }}" (click)="openDropdownId.set(null)">
+                    <a class="dropdown-item" routerLink="/user/patients/edit/{{ patient.id }}" (click)="openDropdownId.set(null)">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
                       Edit Patient
                     </a>
-                    <a class="dropdown-item" routerLink="/receptionist/appointments/new" [queryParams]="{ patientId: patient.id }" (click)="openDropdownId.set(null)">
+                    <a class="dropdown-item" routerLink="/user/appointments/new" [queryParams]="{ patientId: patient.id }" (click)="openDropdownId.set(null)">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                       Book Appointment
                     </a>
@@ -290,8 +290,8 @@
               }
             </div>
             <div class="patient-card__actions">
-              <button class="btn btn-tertiary" style="flex:1; font-size:12px; padding: 6px 0;" routerLink="/receptionist/patients/edit/{{ patient.id }}">Edit</button>
-              <button class="btn btn-primary" style="flex:1; font-size:12px; padding: 6px 0;" routerLink="/receptionist/appointments/new" [queryParams]="{ patientId: patient.id }">Book Appt</button>
+              <button class="btn btn-tertiary" style="flex:1; font-size:12px; padding: 6px 0;" routerLink="/user/patients/edit/{{ patient.id }}">Edit</button>
+              <button class="btn btn-primary" style="flex:1; font-size:12px; padding: 6px 0;" routerLink="/user/appointments/new" [queryParams]="{ patientId: patient.id }">Book Appt</button>
             </div>
           </div>
         } @empty {

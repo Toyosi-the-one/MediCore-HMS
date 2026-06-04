@@ -10,11 +10,9 @@ export const FirebaseAdminProvider: Provider = {
 
     return admin.initializeApp({
       credential: admin.credential.cert({
-        projectId: config.get('FIREBASE_PROJECT_ID'),
-        clientEmail: config.get('FIREBASE_CLIENT_EMAIL'),
-        privateKey: config
-          .get<string>('FIREBASE_PRIVATE_KEY')
-          ?.replace(/\\n/g, '\n'),
+        projectId: config.get('project_id'),
+        clientEmail: config.get('client_email'),
+        privateKey: config.get<string>('private_key')?.replace(/\\n/g, '\n'),
       }),
     });
   },

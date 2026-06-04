@@ -19,7 +19,6 @@ import {
 } from 'firebase/firestore';
 import { FIRESTORE } from '../../app.config';
 
-
 /**
  * Core Data Models
  */

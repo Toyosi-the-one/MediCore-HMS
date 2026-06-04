@@ -64,7 +64,9 @@ header {
     display: none;
   }
   .featuresList {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
     margin: 0 auto 0 auto;
     padding: auto;
   }
@@ -75,7 +77,9 @@ header {
 
 @media (min-width: 616px) {
   .featuresIcons {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
   }
   .featuresList {
     display: none;

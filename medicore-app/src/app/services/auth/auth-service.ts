@@ -46,6 +46,21 @@ export class AuthService {
   private createSession(idToken: string) {
     return this.http.post(`${environment.apiURL}/session`, { idToken }, { withCredentials: true });
   }
+  private async roleNavigation() {
+    const user: any = await this.http
+      .get(`${environment.apiURL}/firebase-auth/me`, { withCredentials: true })
+      .toPromise();
+    const role = user.role?.toLowerCase();
+    if (['admin', 'doctor', 'receptionist'].includes(role)) {
+      this.router.navigate(['user']);
+    } else if (role === 'patient') {
+      this.router.navigate(['patient']);
+    } else {
+      alert('Had difficulties logging you in. Please contact support.');
+      console.log('Unknown role:', user.role);
+      this.router.navigate(['login']);
+    }
+  }
   async completeOnboarding(role: string, password: string) {
     if (!this.pendingUser) return;
 
@@ -73,7 +88,10 @@ export class AuthService {
     this.showRoleModal = false;
 
     // 🚀 continue app
-    this.router.navigate(['admin']);
+    // this.router.navigate(['admin']);
+    if (['admin', 'doctor', 'receptionist'].includes(role.toLowerCase())) {
+      this.router.navigate(['user']);
+    }
   }
   private async checkUserExists(uid: string): Promise<boolean> {
     const userRef = doc(this.db, 'users', uid);
@@ -105,9 +123,9 @@ export class AuthService {
         this.pendingUser = user;
         this.showRoleModal = true;
         return;
+      } else {
+        this.roleNavigation();
       }
-
-      this.router.navigate(['admin']);
     } catch (error) {
       console.error(error);
     }
@@ -123,10 +141,10 @@ export class AuthService {
 
       const idToken = await response.user.getIdToken();
 
-      await firstValueFrom (this.createSession(idToken)); // Wait for session
+      await firstValueFrom(this.createSession(idToken)); // Wait for session
 
       console.log('Login + session successful');
-      this.router.navigate(['admin']);
+      this.roleNavigation();
     } catch (error: any) {
       console.error('Login error:', error);
       throw error; // ←←← THIS WAS MISSING!
