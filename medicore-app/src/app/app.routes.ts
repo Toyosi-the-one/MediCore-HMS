@@ -4,7 +4,6 @@ import { sessionCheckGuard } from './guards/session-check-guard';
 import { userDetailsResolver } from './resolvers/userDetails-resolvers';
 
 export const routes: Routes = [
-<<<<<<< HEAD
   // -------------------
   // PUBLIC ROUTES
   // -------------------
@@ -12,10 +11,10 @@ export const routes: Routes = [
     path: '',
     loadComponent: () => import('./pages/landing-page/landing-page').then((m) => m.LandingPage),
   },
-  {
-    path: 'home',
-    loadComponent: () => import('./pages/homepage/homepage').then((m) => m.Homepage),
-  },
+  // {
+  //   path: 'home',
+  //   loadComponent: () => import('./pages/homepage/homepage').then((m) => m.Homepage),
+  // },
   {
     path: 'login',
     loadComponent: () => import('./pages/signin-page/signin-page').then((m) => m.SigninPage),
@@ -34,15 +33,15 @@ export const routes: Routes = [
     canActivate: [sessionCheckGuard],
     resolve: { userDetails: userDetailsResolver },
     children: [
-      {
-        path: 'admin',
-        loadComponent: () =>
-          import('./pages/admin-dashboard/admin-dashboard').then((m) => m.AdminDashboard),
-      },
-      {
-        path: 'patients',
-        loadComponent: () => import('./pages/patients/patients').then((m) => m.Patients),
-      },
+      // {
+      //   path: 'admin',
+      //   loadComponent: () =>
+      //     import('./pages/admin-dashboard/admin-dashboard').then((m) => m.AdminDashboard),
+      // },
+      // {
+      //   path: 'patients',
+      //   loadComponent: () => import('./pages/patients/patients').then((m) => m.Patients),
+      // },
       {
         path: 'user',
         loadComponent: () =>
@@ -153,41 +152,55 @@ export const routes: Routes = [
       },
 
       // Catch-all
-      { path: '**', redirectTo: 'login' },
+      { path: '**', redirectTo: 'dashboard' },
     ],
   },
 
   // All receptionist pages live inside the main layout shell
-=======
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
-    path: 'dashboard',
-    loadComponent: () => import('./components/dashboard/dashboard.component').then(m => m.DashboardComponent)
+    path: 'dashboarddavid',
+    loadComponent: () =>
+      import('./components/dashboard/dashboard.component').then((m) => m.DashboardComponent),
   },
   {
-    path: 'doctor',
-    loadComponent: () => import('./components/doctor/doctor-profile-page.component').then(m => m.DoctorProfilePageComponent)
+    path: 'doctordavid',
+    loadComponent: () =>
+      import('./components/doctor/doctor-profile-page.component').then(
+        (m) => m.DoctorProfilePageComponent,
+      ),
   },
-  {
-    path: 'patients/:id',
-    loadComponent: () => import('./components/patients/patient-detail.component').then(m => m.PatientDetailComponent)
-  },
-  {
-    path: 'patients',
-    loadComponent: () => import('./components/patients/patients.component').then(m => m.PatientsComponent)
-  },
+  // {
+  //   path: 'patients/:id',
+  //   loadComponent: () =>
+  //     import('./components/patients/patient-detail.component').then(
+  //       (m) => m.PatientDetailComponent,
+  //     ),
+  // },
+  // {
+  //   path: 'patients',
+  //   loadComponent: () =>
+  //     import('./components/patients/patients.component').then((m) => m.PatientsComponent),
+  // },
   {
     path: 'appointments',
-    loadComponent: () => import('./components/appointments/appointments.component').then(m => m.AppointmentsComponent)
+    loadComponent: () =>
+      import('./components/appointments/appointments.component').then(
+        (m) => m.AppointmentsComponent,
+      ),
   },
   {
     path: 'medical-records',
-    loadComponent: () => import('./components/medical-records/medical-records.component').then(m => m.MedicalRecordsComponent)
+    loadComponent: () =>
+      import('./components/medical-records/medical-records.component').then(
+        (m) => m.MedicalRecordsComponent,
+      ),
   },
   {
     path: 'pharmacy',
-    loadComponent: () => import('./components/pharmacy/pharmacy.component').then(m => m.PharmacyComponent)
+    loadComponent: () =>
+      import('./components/pharmacy/pharmacy.component').then((m) => m.PharmacyComponent),
   },
-  { path: '**', redirectTo: 'dashboard' }
->>>>>>> 3f8422f65d94c599d895ecf7d7ad39de852615c6
+  { path: '**', redirectTo: 'dashboard' },
 ];
+

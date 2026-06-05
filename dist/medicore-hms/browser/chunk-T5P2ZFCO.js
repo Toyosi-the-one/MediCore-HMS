@@ -1,1 +1,0 @@
-import{I as o,f as r}from"./chunk-22YU3XX5.js";var a=class t{toasts=new r;toasts$=this.toasts.asObservable();show(e,s="success"){this.toasts.next({message:e,type:s})}static \u0275fac=function(s){return new(s||t)};static \u0275prov=o({token:t,factory:t.\u0275fac,providedIn:"root"})};export{a};

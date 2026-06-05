@@ -54,8 +54,8 @@
           <div style="display: flex; gap: 0.75em; align-items: center">
             <div class="Icons" style="background-color: var(--grey)"></div>
             <div>
-              <p>Patient management</p>
-              <p>Records, admissions & discharge</p>
+              <p>Appointment scheduling</p>
+              <p>Reminders, confirmations & cancellations</p>
             </div>
           </div>
 
@@ -70,8 +70,8 @@
         <div class="featuresList">
           <li>
             <ol>
-              <p>Patient management</p>
-              <p>Records, admissions & discharge</p>
+              <p>Billing and invoicing</p>
+              <p>Insurance claims & payment processing</p>
             </ol>
           </li>
           <li>
@@ -175,7 +175,10 @@
       </button>
     </div>
     <div *ngIf="auth.showRoleModal" class="modal-overlay">
-      <div class="modal" style="display: flex; flex-direction: column">
+      <div class="modal">
+        <h2>Select Your Role</h2>
+        <p>Please complete your account setup before continuing.</p>
+
         <label for="role">Role</label>
 
         <select id="role" #roleSelect class="input-wrapper">
@@ -185,29 +188,26 @@
           <option value="Receptionist">Receptionist</option>
           <option value="Patient">Patient</option>
         </select>
+
         <div>
           <label for="password">Password</label>
-          <div style="display: flex; gap: 0.75em" class="input-wrapper">
+
+          <div class="input-wrapper" style="display: flex; gap: 0.75em">
             <img src="password.svg" alt="" style="height: 20px" />
+
             <input
               type="password"
-              placeholder="Enter your password"
+              placeholder="Create a password"
               autocomplete="current-password"
               #password
             />
           </div>
         </div>
+
         <button
           type="button"
+          class="continue-btn"
           (click)="auth.completeOnboarding(roleSelect.value, password.value)"
-          style="
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 0.75em 1.5em;
-            border-radius: 8px;
-            margin-top: 1em;
-          "
         >
           Continue
         </button>

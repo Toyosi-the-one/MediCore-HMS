@@ -1,12 +1,12 @@
-<<<<<<< HEAD
-<router-outlet></router-outlet>
-<app-toast-container></app-toast-container>
-=======
-<div class="app-shell">
-  <app-sidebar></app-sidebar>
-  <main class="main-content">
-    <router-outlet></router-outlet>
-  </main>
-  <app-toast-container></app-toast-container>
-</div>
->>>>>>> 3f8422f65d94c599d895ecf7d7ad39de852615c6
+@if (this.david) {  <!--The only thing holding this entire application together--->
+  <div class="app-shell">
+    <app-sidebar></app-sidebar>
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+    <app-toast-container></app-toast-container>
+  </div>
+} @else {
+  <router-outlet></router-outlet>
+  <app-toast-container1></app-toast-container1>
+}

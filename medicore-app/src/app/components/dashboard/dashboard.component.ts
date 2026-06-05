@@ -14,7 +14,7 @@ import { Drug } from '../../models/drug.model';
 import { Subscription, combineLatest } from 'rxjs';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-dashboard-legacy',
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './dashboard.component.html',

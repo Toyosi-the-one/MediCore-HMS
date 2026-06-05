@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit, OnDestroy, DoCheck } from '@angular/core';
 import { NgIf } from '@angular/common';
 import {
   FormsModule,
@@ -17,7 +17,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './signin-page.html',
   styleUrl: './signin-page.scss',
 })
-export class SigninPage {
+export class SigninPage implements OnInit, OnDestroy, DoCheck {
   isLoading = false;
   errorMessage = '';
 
@@ -41,7 +41,21 @@ export class SigninPage {
       validators: [Validators.required],
     }),
   });
+  ngOnInit() {
+    this.toggleBodyScroll();
+  }
 
+  ngDoCheck() {
+    this.toggleBodyScroll();
+  }
+
+  ngOnDestroy() {
+    document.body.style.overflow = 'auto';
+  }
+
+  private toggleBodyScroll() {
+    document.body.style.overflow = this.auth.showRoleModal ? 'hidden' : 'auto';
+  }
   async login() {
     // Reset errors
     this.errorMessage = '';

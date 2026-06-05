@@ -9,7 +9,7 @@ import { PatientsList } from '../../components/patients-list/patients-list';
 import { FirestoreService } from '../../services/firestore-service/firestore.service';
 
 @Component({
-  selector: 'app-admin-dashboard',
+  selector: 'app-patients-page',
   imports: [Header2, SideBarComponent, DashboardCards, PatientsList],
   templateUrl: './patients.html',
   styleUrl: './patients.scss',

@@ -28,6 +28,8 @@ export class MainLayoutComponent {
     { label: 'Queue', icon: 'list', route: '/user/queue' },
     { label: 'Patients', icon: 'users', route: '/user/patients' },
     { label: 'Appointments', icon: 'calendar', route: '/user/appointments' },
+    { label: 'Medical Records', icon: 'file-text', route: '/medical-records' },
+    { label: 'Pharmacy', icon: 'package', route: '/pharmacy' }
   ];
 
   toggleSidebar() {

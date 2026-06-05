@@ -1,7 +1,7 @@
 export const environment = {
   apiURL: 'http://localhost:3000',
   production: false,
-  firebaseConfig: {
+  firebase: {
     apiKey: 'AIzaSyA5Ur72JI81kWZfSTKz6FX2_8xqj-jsH3M',
     authDomain: 'medicore-hms-ad637.firebaseapp.com',
     projectId: 'medicore-hms-ad637',
