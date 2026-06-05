@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { PharmacyService } from '../../services/pharmacy.service';
 import { Drug } from '../../models/drug.model';
 import { Subscription } from 'rxjs';
-import { SideBarComponent } from "../sideBar/sideBar.component";
+//import { SideBarComponent } from "../sideBar/sideBar.component";
 
 @Component({
   selector: 'app-pharmacy',
   standalone: true,
-  imports: [CommonModule, FormsModule, SideBarComponent],
+  imports: [CommonModule, FormsModule],
   templateUrl: './pharmacy.component.html',
   styleUrl: './pharmacy.component.css'
 })
