@@ -1,0 +1,1018 @@
+{
+  "medicore-hms/apps/medicore-hms": {
+    "root": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "medicore-hms/apps/medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "$schema": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "prefix": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.executor": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.outputs": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.defaultConfiguration": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.outputPath": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.browser": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.tsConfig": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.inlineStyleLanguage": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.assets": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.styles": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.production": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.production.budgets": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.production.outputHashing": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development.optimization": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development.extractLicenses": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.configurations.development.sourceMap": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.continuous": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.executor": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.defaultConfiguration": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.production": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.production.buildTarget": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.development": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.configurations.development.buildTarget": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.lint.executor": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.executor": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.test.options.watch": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static.continuous": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static.executor": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static.options": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static.options.buildTarget": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static.options.staticFilePath": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve-static.options.spa": [
+      "medicore-hms/apps/medicore-hms/project.json",
+      "nx/core/project-json"
+    ]
+  },
+  "medicore-hms/apps/medicore-server": {
+    "root": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "medicore-hms/apps/medicore-server/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:private": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.0": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.1": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.2": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.3": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.4": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.5": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.6": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.7": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.8": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.9": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.10": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.description": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageVersion": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.executor": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.options": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.metadata": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.options.script": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.format.metadata.runCommand": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.executor": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options.script": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.runCommand": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:dev": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:dev.executor": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:dev.options": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:dev.metadata": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:dev.options.script": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:dev.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:dev.metadata.runCommand": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:debug": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:debug.executor": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:debug.options": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:debug.metadata": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:debug.options.script": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:debug.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:debug.metadata.runCommand": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:prod": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:prod.executor": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:prod.options": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:prod.metadata": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:prod.options.script": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:prod.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start:prod.metadata.runCommand": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.executor": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.options": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.metadata": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.options.script": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.lint.metadata.runCommand": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.executor": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.options": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.metadata": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.options.script": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.metadata.runCommand": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch.executor": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch.options": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch.metadata": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch.options.script": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:watch.metadata.runCommand": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:cov": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:cov.executor": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:cov.options": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:cov.metadata": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:cov.options.script": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:cov.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:cov.metadata.runCommand": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:debug": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:debug.executor": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:debug.options": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:debug.metadata": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:debug.options.script": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:debug.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:debug.metadata.runCommand": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:e2e": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:e2e.executor": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:e2e.options": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:e2e.metadata": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:e2e.options.script": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:e2e.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test:e2e.metadata.runCommand": [
+      "medicore-hms/apps/medicore-server/package.json",
+      "nx/core/package-json"
+    ],
+    "$schema": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.executor": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options.cwd": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options.command": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.executor": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.cwd": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.command": [
+      "medicore-hms/apps/medicore-server/project.json",
+      "nx/core/project-json"
+    ]
+  },
+  "medicore-hms/apps/medicore-app": {
+    "root": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.cache": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.outputs": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.executor": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.cwd": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.env": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.command": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies.0": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.description": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.command": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.example": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "name": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:private": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.0": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.1": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.2": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups.NPM Scripts.3": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageVersion": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.ng": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.ng.executor": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.ng.options": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.ng.metadata": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.ng.options.script": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.ng.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.ng.metadata.runCommand": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.executor": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.options.script": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.start.metadata.runCommand": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.watch": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.watch.executor": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.watch.options": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.watch.metadata": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.watch.options.script": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.watch.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.watch.metadata.runCommand": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.executor": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.options": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.metadata": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.options.script": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.metadata.scriptContent": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "targets.test.metadata.runCommand": [
+      "medicore-hms/apps/medicore-app/package.json",
+      "nx/core/package-json"
+    ],
+    "$schema": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.executor": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options.cwd": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.serve.options.command": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.executor": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.cwd": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.command": [
+      "medicore-hms/apps/medicore-app/project.json",
+      "nx/core/project-json"
+    ]
+  },
+  "medicore-hms": {
+    "root": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.cache": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.inputs": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.outputs": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.executor": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.cwd": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.env": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.options.command": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.technologies.0": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.description": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.command": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ],
+    "targets.lint.metadata.help.example": [
+      "medicore-hms/eslint.config.mjs",
+      "@nx/eslint/plugin"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Medicore-HMS",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "@nx/angular": "^22.7.5",
+    "@nx/eslint": "22.7.5",
+    "@nx/nest": "^22.7.5",
+    "@nx/vitest": "22.7.5",
+    "eslint": "~8.57.0",
+    "nx": "^22.7.5",
+    "vite": "^8.0.0",
+    "vitest": "~4.1.0"
+  }
+}

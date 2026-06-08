@@ -1,0 +1,1191 @@
+{
+  "version": "6.0",
+  "nxVersion": "22.7.5",
+  "pathMappings": {},
+  "nxJsonPlugins": [
+    {
+      "name": "@nx/vitest",
+      "version": "22.7.5",
+      "options": {
+        "testTargetName": "test",
+        "ciTargetName": "test-ci",
+        "testMode": "watch"
+      }
+    },
+    {
+      "name": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    }
+  ],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".gitignore",
+        "hash": "4929132464025924178"
+      },
+      {
+        "file": "nx.json",
+        "hash": "11336673236439893846"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "3580615195263730979"
+      },
+      {
+        "file": "package.json",
+        "hash": "8951758792224652638"
+      }
+    ],
+    "projectFileMap": {
+      "medicore-hms": [
+        {
+          "file": "medicore-hms/apps/medicore-hms/eslint.config.mjs",
+          "hash": "11999635802406141026",
+          "deps": [
+            "@medicore-hms/source"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/project.json",
+          "hash": "5812073947892292200"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/src/app/app.config.ts",
+          "hash": "4436923392211261843",
+          "deps": [
+            "@medicore-hms/source"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/src/app/app.html",
+          "hash": "11987652264972370457"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/src/app/app.routes.ts",
+          "hash": "6185150965714414910",
+          "deps": [
+            "@medicore-hms/source"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/src/app/app.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/src/app/app.spec.ts",
+          "hash": "7729066341857192034",
+          "deps": [
+            "@medicore-hms/source"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/src/app/app.ts",
+          "hash": "13709983086010081491",
+          "deps": [
+            "@medicore-hms/source"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/src/app/nx-welcome.ts",
+          "hash": "8823938004321002354",
+          "deps": [
+            "@medicore-hms/source"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/src/index.html",
+          "hash": "3393851578797997334"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/src/main.ts",
+          "hash": "3314327030169821486",
+          "deps": [
+            "@medicore-hms/source"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/src/styles.scss",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/tsconfig.app.json",
+          "hash": "18236407445202082987"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/tsconfig.json",
+          "hash": "16004134237605501702"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-hms/tsconfig.spec.json",
+          "hash": "13919890687900665478"
+        }
+      ],
+      "medicore-app": [
+        {
+          "file": "medicore-hms/apps/medicore-app/.editorconfig",
+          "hash": "8037249353422744134"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/.gitignore",
+          "hash": "1202213771149837291"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/.prettierrc",
+          "hash": "7467919868826279542"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/.vscode/extensions.json",
+          "hash": "11934160580685414355"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/.vscode/launch.json",
+          "hash": "17406702432687230417"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/.vscode/mcp.json",
+          "hash": "11492871017727097845"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/.vscode/tasks.json",
+          "hash": "11080398893561185157"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/README.md",
+          "hash": "6637973398550527906"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/angular.json",
+          "hash": "12398240234000529347"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/package-lock.json",
+          "hash": "11177576827459403859"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/package.json",
+          "hash": "2799580454747011195",
+          "deps": [
+            "npm:typescript",
+            "npm:vitest",
+            "npm:rxjs",
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/project.json",
+          "hash": "14068729661927198853"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/Logo.svg",
+          "hash": "8268048877795796304"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/back-arrow.svg",
+          "hash": "2810975519973724143"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/cameraIcon.svg",
+          "hash": "4951445145545469112"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/dashboard.svg",
+          "hash": "9816960493307800368"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/doctor-s.jpg",
+          "hash": "10358396013468311936"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/doctor-xs.jpg",
+          "hash": "11614076431020443121"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/doctor.jpg",
+          "hash": "3298816188058213645"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/drugs.svg",
+          "hash": "1848430077122415956"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/email.svg",
+          "hash": "3112006636074267306"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/favicon.ico",
+          "hash": "3988961587069885523"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/google-sign-up.svg",
+          "hash": "4912000329461372239"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/hamburger.png",
+          "hash": "17550995166314324398"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/hamburger.svg",
+          "hash": "7087888907958400854"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/harmburger.svg",
+          "hash": "7533227803476651369"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/magnifier.svg",
+          "hash": "11751550977371185563"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/martha-dominguez-de-gouveia-nMyM7fxpokE-unsplash.jpg",
+          "hash": "18204777365187956636"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/moredoctors.jpg",
+          "hash": "14933581150121588181"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/notifications.svg",
+          "hash": "9773223214910412684"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/password.svg",
+          "hash": "11828511420489330971"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/public/userIcon.svg",
+          "hash": "11615167213026353704"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/app.config.ts",
+          "hash": "3839082407858046304"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/app.html",
+          "hash": "17142726385422645931"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/app.routes.ts",
+          "hash": "6936763396893739386"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/app.scss",
+          "hash": "9151635396509457582"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/app.ts",
+          "hash": "16444546522363390989",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/appointments/appointments.component.css",
+          "hash": "9680103382059272438"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/appointments/appointments.component.html",
+          "hash": "592760050289811388"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/appointments/appointments.component.ts",
+          "hash": "2095417281809963068",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/dashboard-cards/dashboard-cards.html",
+          "hash": "6700625966897172485"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/dashboard-cards/dashboard-cards.scss",
+          "hash": "10331013084083438053"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/dashboard-cards/dashboard-cards.spec.ts",
+          "hash": "14433257093768211859"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/dashboard-cards/dashboard-cards.ts",
+          "hash": "5960778702128133688"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/dashboard/dashboard.component.css",
+          "hash": "605001892606326200"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/dashboard/dashboard.component.html",
+          "hash": "9719674905277559129"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/dashboard/dashboard.component.ts",
+          "hash": "14161591779510582735",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/doctor/doctor-profile-page.component.ts",
+          "hash": "14250242493076040529"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/footer-component/footer-component.html",
+          "hash": "1410303714266004579"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/footer-component/footer-component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/footer-component/footer-component.spec.ts",
+          "hash": "15414365323859496839"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/footer-component/footer-component.ts",
+          "hash": "14241793744588387560"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/header-component/header-component.html",
+          "hash": "5464500926082938262"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/header-component/header-component.scss",
+          "hash": "8316860881319495686"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/header-component/header-component.spec.ts",
+          "hash": "10259740347896861231"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/header-component/header-component.ts",
+          "hash": "14831100998875510402"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/header2/header2.html",
+          "hash": "5182077112116732742"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/header2/header2.scss",
+          "hash": "4122548245638857213"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/header2/header2.ts",
+          "hash": "12327909265922504629"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/medical-records/medical-records.component.css",
+          "hash": "2022083660125307255"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/medical-records/medical-records.component.html",
+          "hash": "14884252151136160539"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/medical-records/medical-records.component.ts",
+          "hash": "16467615937268490336",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/patients-list/patients-list.html",
+          "hash": "1507324439834981006"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/patients-list/patients-list.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/patients-list/patients-list.spec.ts",
+          "hash": "14939157406064609368"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/patients-list/patients-list.ts",
+          "hash": "5387276240837618876",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/patients/patient-detail.component.ts",
+          "hash": "115833121844266381"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/patients/patients.component.css",
+          "hash": "7785525316766540571"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/patients/patients.component.html",
+          "hash": "13874973766422025694"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/patients/patients.component.ts",
+          "hash": "10306336588200103444",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/pharmacy/pharmacy.component.css",
+          "hash": "13589536266122051444"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/pharmacy/pharmacy.component.html",
+          "hash": "9257834528124551923"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/pharmacy/pharmacy.component.ts",
+          "hash": "6113078773766547686",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/shared/sidebar/sidebar.component.css",
+          "hash": "12530129005813602967"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/shared/sidebar/sidebar.component.html",
+          "hash": "17653683847202623695"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/shared/sidebar/sidebar.component.ts",
+          "hash": "17329772163073001379"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/sideBar/sideBar.component.html",
+          "hash": "9671979791522218439"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/sideBar/sideBar.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/sideBar/sideBar.component.spec.ts",
+          "hash": "196797601456443042"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/components/sideBar/sideBar.component.ts",
+          "hash": "13298530400144340643"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/core/components/toast/toast.component.ts",
+          "hash": "405505042851690654"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/core/data/appointment.config.ts",
+          "hash": "438683265993762041"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/core/services/patient-session.service.ts",
+          "hash": "14743656619210351967"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/core/services/receptionist.service.ts",
+          "hash": "16952621684381388626"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/core/services/toast.service.ts",
+          "hash": "17504656298450215695"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-appointments/patient-appointments.component.html",
+          "hash": "3460797663782080019"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-appointments/patient-appointments.component.scss",
+          "hash": "1866794758780411022"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-appointments/patient-appointments.component.ts",
+          "hash": "16876301507119101337"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-appointments/patient-appointments.html",
+          "hash": "212040970384420474"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-appointments/patient-appointments.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-appointments/patient-appointments.ts",
+          "hash": "18153560747036754481"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-book/patient-book.component.html",
+          "hash": "9421429684887412314"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-book/patient-book.component.scss",
+          "hash": "17659418044037297525"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-book/patient-book.component.ts",
+          "hash": "5998576267338993364"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-book/patient-book.html",
+          "hash": "3335976307527737708"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-book/patient-book.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-book/patient-book.ts",
+          "hash": "4558583499591862229"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-dashboard/patient-dashboard.component.html",
+          "hash": "7801051699780536002"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-dashboard/patient-dashboard.component.scss",
+          "hash": "10327442896571853591"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-dashboard/patient-dashboard.component.ts",
+          "hash": "1440800329340100217"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-entry/patient-entry.component.html",
+          "hash": "17821769211294739388"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-entry/patient-entry.component.scss",
+          "hash": "11934631696254892418"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-entry/patient-entry.component.ts",
+          "hash": "11340679717884238875"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-entry/patient-entry.html",
+          "hash": "16604451485382854887"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-entry/patient-entry.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-entry/patient-entry.ts",
+          "hash": "11283785334977794479"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-profile/patient-profile.component.html",
+          "hash": "15265077599432269035"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-profile/patient-profile.component.scss",
+          "hash": "11571089753392516429"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/patient/patient-profile/patient-profile.component.ts",
+          "hash": "5285603234721918951"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/appointment-list/appointment-list.component.html",
+          "hash": "3790975689332638952"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/appointment-list/appointment-list.component.scss",
+          "hash": "8248365700709855370"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/appointment-list/appointment-list.component.ts",
+          "hash": "12881359268692828860"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/dashboard/dashboard.component.html",
+          "hash": "11542277487566469205"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/dashboard/dashboard.component.scss",
+          "hash": "6215254440393847599"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/dashboard/dashboard.component.ts",
+          "hash": "7276767293059181871"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/edit-patient/edit-patient.component.html",
+          "hash": "18265856649543323861"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/edit-patient/edit-patient.component.scss",
+          "hash": "16357744088924873699"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/edit-patient/edit-patient.component.ts",
+          "hash": "17709153217223975858"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/patient-list/patient-list.component.html",
+          "hash": "10654457702599843325"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/patient-list/patient-list.component.scss",
+          "hash": "14419035086478337732"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/patient-list/patient-list.component.ts",
+          "hash": "4266156294854015821"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/patient-registration/patient-registration.component.html",
+          "hash": "13212562212779722751"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/patient-registration/patient-registration.component.scss",
+          "hash": "11789069276968439371"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/patient-registration/patient-registration.component.ts",
+          "hash": "2140390372982630335"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/queue-dashboard/queue-dashboard.component.html",
+          "hash": "13382909368458923698"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/queue-dashboard/queue-dashboard.component.scss",
+          "hash": "393682049136204800"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/queue-dashboard/queue-dashboard.component.ts",
+          "hash": "5175609532427053515"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/schedule-appointment/schedule-appointment.component.html",
+          "hash": "4743308644512522827"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/schedule-appointment/schedule-appointment.component.scss",
+          "hash": "623176464236285732"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/features/receptionist/schedule-appointment/schedule-appointment.component.ts",
+          "hash": "4537536219598162645"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/firebase.ts",
+          "hash": "478673926031528346"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/guards/session-check-guard.ts",
+          "hash": "17114083110782350264",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/layout/main-layout/main-layout.component.html",
+          "hash": "14848478649606802508"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/layout/main-layout/main-layout.component.scss",
+          "hash": "9421291019967041750"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/layout/main-layout/main-layout.component.ts",
+          "hash": "17573888045081669386"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/layout/patient-layout/patient-layout.component.html",
+          "hash": "14774617899296815264"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/layout/patient-layout/patient-layout.component.scss",
+          "hash": "14897684538603584886"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/layout/patient-layout/patient-layout.component.ts",
+          "hash": "14601574453581980933"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/models/appointment.model.ts",
+          "hash": "18131962942072641403"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/models/doctor.model.ts",
+          "hash": "13427215189069984433"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/models/drug.model.ts",
+          "hash": "9539354507347490945"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/models/medical-record.model.ts",
+          "hash": "7777301170898362642"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/models/patient.model.ts",
+          "hash": "368881812415357711"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/admin-dashboard/admin-dashboard.html",
+          "hash": "12978433333840158335"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/admin-dashboard/admin-dashboard.scss",
+          "hash": "16144348315390105367"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/admin-dashboard/admin-dashboard.spec.ts",
+          "hash": "9139511708556638075"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/admin-dashboard/admin-dashboard.ts",
+          "hash": "12752976418130959722"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/create-account/create-account.html",
+          "hash": "9914844623388088782"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/create-account/create-account.scss",
+          "hash": "13325832862541133527"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/create-account/create-account.spec.ts",
+          "hash": "14683268001478199311"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/create-account/create-account.ts",
+          "hash": "5655320714800945791"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/homepage/homepage.html",
+          "hash": "6389389968277604309"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/homepage/homepage.scss",
+          "hash": "17447785822899302043"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/homepage/homepage.spec.ts",
+          "hash": "4573838476255160668"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/homepage/homepage.ts",
+          "hash": "270045523165080063"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/landing-page/landing-page.html",
+          "hash": "7289082508998302166"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/landing-page/landing-page.scss",
+          "hash": "7530033653331220172"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/landing-page/landing-page.spec.ts",
+          "hash": "5728359415965536550"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/landing-page/landing-page.ts",
+          "hash": "14604273443494411651"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/patients/patients.html",
+          "hash": "12409301034808972913"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/patients/patients.scss",
+          "hash": "6250611315986044867"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/patients/patients.spec.ts",
+          "hash": "16446278126442111609"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/patients/patients.ts",
+          "hash": "473777820528378993"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/signin-page/signin-page.html",
+          "hash": "5734555501062427633"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/signin-page/signin-page.scss",
+          "hash": "16552823680209291460"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/signin-page/signin-page.spec.ts",
+          "hash": "3922223039107043938"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/pages/signin-page/signin-page.ts",
+          "hash": "4439192710643311595"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/resolvers/userDetails-resolvers.ts",
+          "hash": "653388843868245496"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/services/appointment.service.ts",
+          "hash": "10600711062816689067",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/services/auth/auth-service.spec.ts",
+          "hash": "15014562443707088733"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/services/auth/auth-service.ts",
+          "hash": "8055806095391424128",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/services/doctor.service.ts",
+          "hash": "8077394355170494760"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/services/firestore-service/firestore.service.ts",
+          "hash": "10407702849747363833",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/services/medical-record.service.ts",
+          "hash": "11266365482438141101",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/services/menuBar/menu-bar.ts",
+          "hash": "11131781276999386599"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/services/patient-service/patient-service.ts",
+          "hash": "16797845244912580135"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/services/patient.service.ts",
+          "hash": "15350353354965082448",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/services/pharmacy.service.ts",
+          "hash": "10992857291998657353",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/services/seed.service.ts",
+          "hash": "10323878409271921064"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/services/userDetails/user-details.ts",
+          "hash": "4622293975969808560",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/shared/header/doctor-profile.component.ts",
+          "hash": "12471859196210896684"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/shared/toast/toast.component.ts",
+          "hash": "9343097899350401754"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/shared/toast/toast.service.ts",
+          "hash": "16425230096112337820",
+          "deps": [
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/store/firestore.store.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/app/store/userDetails.store.ts",
+          "hash": "9910638309928252893"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/environments/environment.development.ts",
+          "hash": "11665796943097762259"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/environments/environment.ts",
+          "hash": "7995968218166638156"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/index.html",
+          "hash": "2246630885744651652"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/main.ts",
+          "hash": "10405740721546735325"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/src/styles.scss",
+          "hash": "1836590728499786558"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/tsconfig.app.json",
+          "hash": "6548324417780048770"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/tsconfig.json",
+          "hash": "12986063587128948135"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-app/tsconfig.spec.json",
+          "hash": "232023305932714127"
+        }
+      ],
+      "@medicore-hms/source": [
+        {
+          "file": "medicore-hms/.editorconfig",
+          "hash": "5443105041930014821"
+        },
+        {
+          "file": "medicore-hms/.gitignore",
+          "hash": "11502482774063263864"
+        },
+        {
+          "file": "medicore-hms/.prettierignore",
+          "hash": "5407418692668764289"
+        },
+        {
+          "file": "medicore-hms/.prettierrc",
+          "hash": "16267754514737964994"
+        },
+        {
+          "file": "medicore-hms/.vscode/extensions.json",
+          "hash": "16884713733442577066"
+        },
+        {
+          "file": "medicore-hms/README.md",
+          "hash": "17132786858018657038"
+        },
+        {
+          "file": "medicore-hms/eslint.config.mjs",
+          "hash": "12926286793420397906"
+        },
+        {
+          "file": "medicore-hms/nx.json",
+          "hash": "17720461057425803082"
+        },
+        {
+          "file": "medicore-hms/package-lock.json",
+          "hash": "3145225152226418540"
+        },
+        {
+          "file": "medicore-hms/package.json",
+          "hash": "502759198534106507",
+          "deps": [
+            "npm:@angular-devkit/core",
+            "npm:@angular-devkit/schematics",
+            "npm:@eslint/js",
+            "npm:@nestjs/schematics",
+            "npm:@nx/angular",
+            "npm:@nx/eslint",
+            "npm:@nx/js",
+            "npm:@nx/nest",
+            "npm:@nx/web",
+            "npm:@nx/workspace",
+            "npm:@schematics/angular",
+            "npm:@typescript-eslint/utils",
+            "npm:eslint",
+            "npm:nx",
+            "npm:tslib",
+            "npm:typescript",
+            "npm:vitest",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/tsconfig.base.json",
+          "hash": "3385014866466956207"
+        }
+      ],
+      "medicore-server": [
+        {
+          "file": "medicore-hms/apps/medicore-server/.gitignore",
+          "hash": "7421767384883881447"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/.prettierrc",
+          "hash": "14145419060237914883"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/README.md",
+          "hash": "13123434361241207768"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/eslint.config.mjs",
+          "hash": "17520456152920331010",
+          "deps": [
+            "npm:@eslint/js",
+            "npm:globals"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/nest-cli.json",
+          "hash": "18272654682417215031"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/package-lock.json",
+          "hash": "9139115181432949057"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/package.json",
+          "hash": "5854227846393358385",
+          "deps": [
+            "npm:@eslint/eslintrc",
+            "npm:@eslint/js",
+            "npm:@nestjs/schematics",
+            "npm:@types/express",
+            "npm:@types/node",
+            "npm:eslint",
+            "npm:globals",
+            "npm:source-map-support@0.5.21",
+            "npm:ts-loader",
+            "npm:tsconfig-paths",
+            "npm:typescript",
+            "npm:reflect-metadata",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/project.json",
+          "hash": "18172260452174636119"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/all-execeptions-filter.ts",
+          "hash": "12321700964526510656",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/app.controller.ts",
+          "hash": "1345450293891055440"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/app.module.ts",
+          "hash": "2866590372243186096"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/app.service.ts",
+          "hash": "15275323873054081339"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/firebase-auth.controller.ts",
+          "hash": "7064626029850858844",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/firebase-auth.module.ts",
+          "hash": "4768832430324906907"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/firebase-auth.service.ts",
+          "hash": "8380284072894538526"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/firebase-handlers.ts",
+          "hash": "16687152594657782761"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/loginDTO.ts",
+          "hash": "2262135797284769708"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-init/firebase-controller.ts",
+          "hash": "13633672266788276256"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-init/firebase-healthCheck-service.ts",
+          "hash": "6072456152893302830"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-init/firebase-module.ts",
+          "hash": "1300632526844333751"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-init/firebase-provider.ts",
+          "hash": "18155431229601008233"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firestore/firestore.controller.ts",
+          "hash": "831489253619799202"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firestore/firestore.module.ts",
+          "hash": "14608165302960963933"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firestore/firestore.service.ts",
+          "hash": "4567734143859651559"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/main.ts",
+          "hash": "15597837455699464634"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/session/session.controller.ts",
+          "hash": "4863231088174836001",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/session/session.guard.ts",
+          "hash": "9766855758941843376",
+          "deps": [
+            "npm:express"
+          ]
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/session/session.module.ts",
+          "hash": "11512620513774983971"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/session/session.service.ts",
+          "hash": "3377042670001684726"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/test/app.e2e-spec.ts",
+          "hash": "2340802501280067852"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/test/jest-e2e.json",
+          "hash": "10645908491471703423"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/tsconfig.build.json",
+          "hash": "9666801268768259513"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/tsconfig.json",
+          "hash": "2175911769417194625"
+        }
+      ]
+    }
+  },
+  "externalNodesHash": "12349751046615089061"
+}
