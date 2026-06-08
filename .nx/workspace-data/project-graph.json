@@ -341,107 +341,6 @@
         "implicitDependencies": []
       }
     },
-    "medicore-hms": {
-      "name": "medicore-hms",
-      "type": "app",
-      "data": {
-        "root": "medicore-hms/apps/medicore-hms",
-        "targets": {
-          "lint": {
-            "executor": "@nx/eslint:lint",
-            "options": {},
-            "configurations": {},
-            "parallelism": true
-          },
-          "build": {
-            "executor": "@angular/build:application",
-            "outputs": [
-              "{options.outputPath}"
-            ],
-            "options": {
-              "outputPath": "dist/apps/medicore-hms",
-              "browser": "apps/medicore-hms/src/main.ts",
-              "tsConfig": "apps/medicore-hms/tsconfig.app.json",
-              "inlineStyleLanguage": "scss",
-              "assets": [
-                {
-                  "glob": "**/*",
-                  "input": "apps/medicore-hms/public"
-                }
-              ],
-              "styles": [
-                "apps/medicore-hms/src/styles.scss"
-              ]
-            },
-            "configurations": {
-              "production": {
-                "budgets": [
-                  {
-                    "type": "initial",
-                    "maximumWarning": "500kb",
-                    "maximumError": "1mb"
-                  },
-                  {
-                    "type": "anyComponentStyle",
-                    "maximumWarning": "4kb",
-                    "maximumError": "8kb"
-                  }
-                ],
-                "outputHashing": "all"
-              },
-              "development": {
-                "optimization": false,
-                "extractLicenses": false,
-                "sourceMap": true
-              }
-            },
-            "defaultConfiguration": "production",
-            "parallelism": true
-          },
-          "serve": {
-            "continuous": true,
-            "executor": "@angular/build:dev-server",
-            "configurations": {
-              "production": {
-                "buildTarget": "medicore-hms:build:production"
-              },
-              "development": {
-                "buildTarget": "medicore-hms:build:development"
-              }
-            },
-            "defaultConfiguration": "development",
-            "options": {},
-            "parallelism": true
-          },
-          "test": {
-            "executor": "@angular/build:unit-test",
-            "options": {
-              "watch": false
-            },
-            "configurations": {},
-            "parallelism": true
-          },
-          "serve-static": {
-            "continuous": true,
-            "executor": "@nx/web:file-server",
-            "options": {
-              "buildTarget": "medicore-hms:build",
-              "staticFilePath": "dist/apps/medicore-hms/browser",
-              "spa": true
-            },
-            "configurations": {},
-            "parallelism": true
-          }
-        },
-        "name": "medicore-hms",
-        "$schema": "../../node_modules/nx/schemas/project-schema.json",
-        "projectType": "application",
-        "prefix": "app",
-        "sourceRoot": "apps/medicore-hms/src",
-        "tags": [],
-        "implicitDependencies": []
-      }
-    },
     "@medicore-hms/source": {
       "name": "@medicore-hms/source",
       "type": "app",
@@ -11309,13 +11208,6 @@
       {
         "source": "medicore-app",
         "target": "npm:tslib",
-        "type": "static"
-      }
-    ],
-    "medicore-hms": [
-      {
-        "source": "medicore-hms",
-        "target": "@medicore-hms/source",
         "type": "static"
       }
     ],
@@ -26366,5 +26258,5 @@
   },
   "version": "6.0",
   "errors": [],
-  "computedAt": 1780815428085
+  "computedAt": 1780942757921
 }

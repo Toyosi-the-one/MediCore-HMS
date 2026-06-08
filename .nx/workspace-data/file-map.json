@@ -39,91 +39,235 @@
       }
     ],
     "projectFileMap": {
-      "medicore-hms": [
+      "@medicore-hms/source": [
         {
-          "file": "medicore-hms/apps/medicore-hms/eslint.config.mjs",
-          "hash": "11999635802406141026",
+          "file": "medicore-hms/.editorconfig",
+          "hash": "5443105041930014821"
+        },
+        {
+          "file": "medicore-hms/.gitignore",
+          "hash": "11502482774063263864"
+        },
+        {
+          "file": "medicore-hms/.prettierignore",
+          "hash": "5407418692668764289"
+        },
+        {
+          "file": "medicore-hms/.prettierrc",
+          "hash": "16267754514737964994"
+        },
+        {
+          "file": "medicore-hms/.vscode/extensions.json",
+          "hash": "16884713733442577066"
+        },
+        {
+          "file": "medicore-hms/README.md",
+          "hash": "17132786858018657038"
+        },
+        {
+          "file": "medicore-hms/eslint.config.mjs",
+          "hash": "12926286793420397906"
+        },
+        {
+          "file": "medicore-hms/nx.json",
+          "hash": "17720461057425803082"
+        },
+        {
+          "file": "medicore-hms/package-lock.json",
+          "hash": "3145225152226418540"
+        },
+        {
+          "file": "medicore-hms/package.json",
+          "hash": "2453156161959955276",
           "deps": [
-            "@medicore-hms/source"
+            "npm:@angular-devkit/core",
+            "npm:@angular-devkit/schematics",
+            "npm:@eslint/js",
+            "npm:@nestjs/schematics",
+            "npm:@nx/angular",
+            "npm:@nx/eslint",
+            "npm:@nx/js",
+            "npm:@nx/nest",
+            "npm:@nx/web",
+            "npm:@nx/workspace",
+            "npm:@schematics/angular",
+            "npm:@typescript-eslint/utils",
+            "npm:eslint",
+            "npm:nx",
+            "npm:tslib",
+            "npm:typescript",
+            "npm:vitest",
+            "npm:rxjs"
           ]
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/project.json",
-          "hash": "5812073947892292200"
+          "file": "medicore-hms/tsconfig.base.json",
+          "hash": "3385014866466956207"
+        }
+      ],
+      "medicore-server": [
+        {
+          "file": "medicore-hms/apps/medicore-server/.gitignore",
+          "hash": "7421767384883881447"
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/public/favicon.ico",
-          "hash": "9303420814833116677"
+          "file": "medicore-hms/apps/medicore-server/.prettierrc",
+          "hash": "14145419060237914883"
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/src/app/app.config.ts",
-          "hash": "4436923392211261843",
+          "file": "medicore-hms/apps/medicore-server/README.md",
+          "hash": "13123434361241207768"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/eslint.config.mjs",
+          "hash": "17520456152920331010",
           "deps": [
-            "@medicore-hms/source"
+            "npm:@eslint/js",
+            "npm:globals"
           ]
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/src/app/app.html",
-          "hash": "11987652264972370457"
+          "file": "medicore-hms/apps/medicore-server/nest-cli.json",
+          "hash": "18272654682417215031"
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/src/app/app.routes.ts",
-          "hash": "6185150965714414910",
+          "file": "medicore-hms/apps/medicore-server/package-lock.json",
+          "hash": "9139115181432949057"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/package.json",
+          "hash": "5854227846393358385",
           "deps": [
-            "@medicore-hms/source"
+            "npm:@eslint/eslintrc",
+            "npm:@eslint/js",
+            "npm:@nestjs/schematics",
+            "npm:@types/express",
+            "npm:@types/node",
+            "npm:eslint",
+            "npm:globals",
+            "npm:source-map-support@0.5.21",
+            "npm:ts-loader",
+            "npm:tsconfig-paths",
+            "npm:typescript",
+            "npm:reflect-metadata",
+            "npm:rxjs"
           ]
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/src/app/app.scss",
-          "hash": "3244421341483603138"
+          "file": "medicore-hms/apps/medicore-server/project.json",
+          "hash": "18172260452174636119"
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/src/app/app.spec.ts",
-          "hash": "7729066341857192034",
+          "file": "medicore-hms/apps/medicore-server/src/all-execeptions-filter.ts",
+          "hash": "12321700964526510656",
           "deps": [
-            "@medicore-hms/source"
+            "npm:express"
           ]
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/src/app/app.ts",
-          "hash": "13709983086010081491",
+          "file": "medicore-hms/apps/medicore-server/src/app.controller.ts",
+          "hash": "1345450293891055440"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/app.module.ts",
+          "hash": "2866590372243186096"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/app.service.ts",
+          "hash": "15275323873054081339"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/firebase-auth.controller.ts",
+          "hash": "7064626029850858844",
           "deps": [
-            "@medicore-hms/source"
+            "npm:express"
           ]
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/src/app/nx-welcome.ts",
-          "hash": "8823938004321002354",
+          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/firebase-auth.module.ts",
+          "hash": "4768832430324906907"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/firebase-auth.service.ts",
+          "hash": "8380284072894538526"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/firebase-handlers.ts",
+          "hash": "16687152594657782761"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/loginDTO.ts",
+          "hash": "2262135797284769708"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-init/firebase-controller.ts",
+          "hash": "13633672266788276256"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-init/firebase-healthCheck-service.ts",
+          "hash": "6072456152893302830"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-init/firebase-module.ts",
+          "hash": "1300632526844333751"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firebase-init/firebase-provider.ts",
+          "hash": "18155431229601008233"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firestore/firestore.controller.ts",
+          "hash": "831489253619799202"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firestore/firestore.module.ts",
+          "hash": "14608165302960963933"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/firestore/firestore.service.ts",
+          "hash": "4567734143859651559"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/main.ts",
+          "hash": "15597837455699464634"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/src/session/session.controller.ts",
+          "hash": "4863231088174836001",
           "deps": [
-            "@medicore-hms/source"
+            "npm:express"
           ]
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/src/index.html",
-          "hash": "3393851578797997334"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-hms/src/main.ts",
-          "hash": "3314327030169821486",
+          "file": "medicore-hms/apps/medicore-server/src/session/session.guard.ts",
+          "hash": "9766855758941843376",
           "deps": [
-            "@medicore-hms/source"
+            "npm:express"
           ]
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/src/styles.scss",
-          "hash": "5195668842064076916"
+          "file": "medicore-hms/apps/medicore-server/src/session/session.module.ts",
+          "hash": "11512620513774983971"
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/tsconfig.app.json",
-          "hash": "18236407445202082987"
+          "file": "medicore-hms/apps/medicore-server/src/session/session.service.ts",
+          "hash": "3377042670001684726"
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/tsconfig.json",
-          "hash": "16004134237605501702"
+          "file": "medicore-hms/apps/medicore-server/test/app.e2e-spec.ts",
+          "hash": "2340802501280067852"
         },
         {
-          "file": "medicore-hms/apps/medicore-hms/tsconfig.spec.json",
-          "hash": "13919890687900665478"
+          "file": "medicore-hms/apps/medicore-server/test/jest-e2e.json",
+          "hash": "10645908491471703423"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/tsconfig.build.json",
+          "hash": "9666801268768259513"
+        },
+        {
+          "file": "medicore-hms/apps/medicore-server/tsconfig.json",
+          "hash": "2175911769417194625"
         }
       ],
       "medicore-app": [
@@ -952,237 +1096,6 @@
         {
           "file": "medicore-hms/apps/medicore-app/tsconfig.spec.json",
           "hash": "232023305932714127"
-        }
-      ],
-      "@medicore-hms/source": [
-        {
-          "file": "medicore-hms/.editorconfig",
-          "hash": "5443105041930014821"
-        },
-        {
-          "file": "medicore-hms/.gitignore",
-          "hash": "11502482774063263864"
-        },
-        {
-          "file": "medicore-hms/.prettierignore",
-          "hash": "5407418692668764289"
-        },
-        {
-          "file": "medicore-hms/.prettierrc",
-          "hash": "16267754514737964994"
-        },
-        {
-          "file": "medicore-hms/.vscode/extensions.json",
-          "hash": "16884713733442577066"
-        },
-        {
-          "file": "medicore-hms/README.md",
-          "hash": "17132786858018657038"
-        },
-        {
-          "file": "medicore-hms/eslint.config.mjs",
-          "hash": "12926286793420397906"
-        },
-        {
-          "file": "medicore-hms/nx.json",
-          "hash": "17720461057425803082"
-        },
-        {
-          "file": "medicore-hms/package-lock.json",
-          "hash": "3145225152226418540"
-        },
-        {
-          "file": "medicore-hms/package.json",
-          "hash": "502759198534106507",
-          "deps": [
-            "npm:@angular-devkit/core",
-            "npm:@angular-devkit/schematics",
-            "npm:@eslint/js",
-            "npm:@nestjs/schematics",
-            "npm:@nx/angular",
-            "npm:@nx/eslint",
-            "npm:@nx/js",
-            "npm:@nx/nest",
-            "npm:@nx/web",
-            "npm:@nx/workspace",
-            "npm:@schematics/angular",
-            "npm:@typescript-eslint/utils",
-            "npm:eslint",
-            "npm:nx",
-            "npm:tslib",
-            "npm:typescript",
-            "npm:vitest",
-            "npm:rxjs"
-          ]
-        },
-        {
-          "file": "medicore-hms/tsconfig.base.json",
-          "hash": "3385014866466956207"
-        }
-      ],
-      "medicore-server": [
-        {
-          "file": "medicore-hms/apps/medicore-server/.gitignore",
-          "hash": "7421767384883881447"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/.prettierrc",
-          "hash": "14145419060237914883"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/README.md",
-          "hash": "13123434361241207768"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/eslint.config.mjs",
-          "hash": "17520456152920331010",
-          "deps": [
-            "npm:@eslint/js",
-            "npm:globals"
-          ]
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/nest-cli.json",
-          "hash": "18272654682417215031"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/package-lock.json",
-          "hash": "9139115181432949057"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/package.json",
-          "hash": "5854227846393358385",
-          "deps": [
-            "npm:@eslint/eslintrc",
-            "npm:@eslint/js",
-            "npm:@nestjs/schematics",
-            "npm:@types/express",
-            "npm:@types/node",
-            "npm:eslint",
-            "npm:globals",
-            "npm:source-map-support@0.5.21",
-            "npm:ts-loader",
-            "npm:tsconfig-paths",
-            "npm:typescript",
-            "npm:reflect-metadata",
-            "npm:rxjs"
-          ]
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/project.json",
-          "hash": "18172260452174636119"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/all-execeptions-filter.ts",
-          "hash": "12321700964526510656",
-          "deps": [
-            "npm:express"
-          ]
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/app.controller.ts",
-          "hash": "1345450293891055440"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/app.module.ts",
-          "hash": "2866590372243186096"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/app.service.ts",
-          "hash": "15275323873054081339"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/firebase-auth.controller.ts",
-          "hash": "7064626029850858844",
-          "deps": [
-            "npm:express"
-          ]
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/firebase-auth.module.ts",
-          "hash": "4768832430324906907"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/firebase-auth.service.ts",
-          "hash": "8380284072894538526"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/firebase-handlers.ts",
-          "hash": "16687152594657782761"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/firebase-auth/loginDTO.ts",
-          "hash": "2262135797284769708"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/firebase-init/firebase-controller.ts",
-          "hash": "13633672266788276256"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/firebase-init/firebase-healthCheck-service.ts",
-          "hash": "6072456152893302830"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/firebase-init/firebase-module.ts",
-          "hash": "1300632526844333751"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/firebase-init/firebase-provider.ts",
-          "hash": "18155431229601008233"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/firestore/firestore.controller.ts",
-          "hash": "831489253619799202"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/firestore/firestore.module.ts",
-          "hash": "14608165302960963933"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/firestore/firestore.service.ts",
-          "hash": "4567734143859651559"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/main.ts",
-          "hash": "15597837455699464634"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/session/session.controller.ts",
-          "hash": "4863231088174836001",
-          "deps": [
-            "npm:express"
-          ]
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/session/session.guard.ts",
-          "hash": "9766855758941843376",
-          "deps": [
-            "npm:express"
-          ]
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/session/session.module.ts",
-          "hash": "11512620513774983971"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/src/session/session.service.ts",
-          "hash": "3377042670001684726"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/test/app.e2e-spec.ts",
-          "hash": "2340802501280067852"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/test/jest-e2e.json",
-          "hash": "10645908491471703423"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/tsconfig.build.json",
-          "hash": "9666801268768259513"
-        },
-        {
-          "file": "medicore-hms/apps/medicore-server/tsconfig.json",
-          "hash": "2175911769417194625"
         }
       ]
     }
