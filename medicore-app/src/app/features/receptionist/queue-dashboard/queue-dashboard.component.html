@@ -1,0 +1,182 @@
+<div class="queue-page">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">Today's Queue</h1>
+      <p class="page-subtitle">{{ today }}</p>
+    </div>
+    <!-- Header actions moved to Dashboard -->
+  </div>
+
+  <!-- Stat Cards -->
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <span class="stat-card__label">Total Today</span>
+      <div class="stat-card__body">
+        @if (isLoading()) {
+          <div style="height: 32px; width: 60px; border-radius: 4px; background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite;"></div>
+        } @else {
+          <span class="stat-card__value">{{ stats().total }}</span>
+          <span class="stat-card__sub">Patients</span>
+        }
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-card__label">Waiting</span>
+      <div class="stat-card__body">
+        @if (isLoading()) {
+          <div style="height: 32px; width: 60px; border-radius: 4px; background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite;"></div>
+        } @else {
+          <span class="stat-card__value">{{ stats().waiting }}</span>
+          <span class="stat-card__sub">In queue</span>
+        }
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-card__label">With Doctor</span>
+      <div class="stat-card__body">
+        @if (isLoading()) {
+          <div style="height: 32px; width: 60px; border-radius: 4px; background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite;"></div>
+        } @else {
+          <span class="stat-card__value">{{ stats().withDoctor }}</span>
+          <span class="stat-card__trend stat-card__trend--up">● Active</span>
+        }
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-card__label">Completed</span>
+      <div class="stat-card__body">
+        @if (isLoading()) {
+          <div style="height: 32px; width: 60px; border-radius: 4px; background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite;"></div>
+        } @else {
+          <span class="stat-card__value">{{ stats().completed }}</span>
+          <span class="stat-card__trend stat-card__trend--up">↑ Done</span>
+        }
+      </div>
+    </div>
+
+  </div>
+  <!-- Queue Table -->
+  <div class="card">
+    <div class="table-header">
+      <div class="filter-tabs">
+        @for (f of filters; track f) {
+          <button
+            class="filter-tab"
+            [class.active]="activeFilter() === f"
+            (click)="setFilter(f)"
+          >{{ f }}</button>
+        }
+      </div>
+
+      <button class="btn btn-secondary" (click)="callNext()" [disabled]="isLoading()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="5 3 19 12 5 21 5 3"/>
+        </svg>
+        Call Next Patient
+      </button>
+    </div>
+
+    @if (isLoading()) {
+      <!-- Skeleton loader -->
+      <div class="skeleton-wrap">
+        @for (i of [1,2,3,4,5]; track i) {
+          <div class="skeleton-row"></div>
+        }
+      </div>
+    } @else {
+      <div class="table-container">
+        <table class="mc-table">
+          <thead>
+            <tr>
+              <th>Ticket</th>
+              <th>Patient</th>
+              <th>Doctor</th>
+              <th>Department</th>
+              <th>Time</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (entry of paginatedQueue(); track entry.id; let i = $index) {
+              <tr [style.opacity]="entry.status === 'Cancelled' ? '0.5' : '1'">
+                <td><span style="font-weight: 500; color: var(--color-primary);">T-{{ ((currentPage() - 1) * pageSize() + i + 1).toString().padStart(3, '0') }}</span></td>
+                <td>
+                  <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: #F1F5F9; color: var(--color-secondary); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 13px;">
+                      {{ entry.patientName[0] }}
+                    </div>
+                    <div>
+                      <div style="font-weight: 500;">{{ entry.patientName }}</div>
+                      <div style="font-size: 12px; color: var(--color-text-light);">{{ entry.age }} yrs · {{ entry.gender === 'M' ? 'Male' : entry.gender === 'F' ? 'Female' : entry.gender }}</div>
+                    </div>
+                  </div>
+                </td>
+                <td>{{ entry.doctor }}</td>
+                <td>{{ entry.department }}</td>
+                <td>{{ entry.appointmentTime }}</td>
+                <td>
+                  <span class="badge"
+                    [class.badge-neutral]="entry.status === 'Pending'"
+                    [class.badge-warning]="entry.status === 'Waiting'"
+                    [class.badge-info]="entry.status === 'With Doctor'"
+                    [class.badge-success]="entry.status === 'Completed'"
+                    [class.badge-error]="entry.status === 'Cancelled'"
+                  >
+                    <span style="font-size: 8px; margin-right: 6px;">●</span>{{ entry.status }}
+                  </span>
+                </td>
+                <td>
+                  <div class="table-action" style="display: flex; gap: 8px;">
+                    @if (entry.status === 'Pending') {
+                      <button class="btn btn-primary" (click)="updateStatus(entry.id!, 'Waiting')" style="padding: 6px 12px; font-size: 12px;">Check In</button>
+                      <button class="btn btn-tertiary btn-icon-only" routerLink="/user/appointments/new" [queryParams]="{ editId: entry.id }" title="Reschedule">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                      </button>
+                      <button class="btn btn-tertiary btn-icon-only" (click)="updateStatus(entry.id!, 'Cancelled')" title="Cancel Appointment" style="color: var(--color-error); border-color: #fee2e2; background: #fef2f2;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                      </button>
+                    }
+                    @if (entry.status === 'Waiting') {
+                      <button class="btn btn-secondary" (click)="updateStatus(entry.id!, 'With Doctor')" style="padding: 6px 12px; font-size: 12px;">Call Next</button>
+                    }
+                    @if (entry.status === 'With Doctor') {
+                      <button class="btn btn-tertiary" (click)="updateStatus(entry.id!, 'Completed')" style="padding: 6px 12px; font-size: 12px; color: var(--color-success); border-color: var(--color-success);">Complete</button>
+                    }
+                    @if (entry.status === 'Cancelled') {
+                      <button class="btn btn-tertiary btn-icon-only" (click)="deleteAppointment(entry.id!)" title="Delete Appointment" style="color: var(--color-error); border-color: transparent;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                      </button>
+                    }
+                  </div>
+                </td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="7" style="text-align: center; color: var(--color-text-light); padding: 32px;">No entries match this filter.</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-footer">
+        <div class="table-footer__info">
+          Showing {{ paginatedQueue().length ? (currentPage() - 1) * pageSize() + 1 : 0 }} to {{ (currentPage() - 1) * pageSize() + paginatedQueue().length }} of {{ filteredQueue().length }} results
+        </div>
+        <div class="pagination">
+          <button class="page-btn page-btn--nav" [disabled]="currentPage() === 1" (click)="prevPage()">←</button>
+          <button class="page-btn active">{{ currentPage() }}</button>
+          <button class="page-btn page-btn--nav" [disabled]="currentPage() >= totalPages()" (click)="nextPage()">→</button>
+        </div>
+      </div>
+    }
+  </div>
+
+</div>

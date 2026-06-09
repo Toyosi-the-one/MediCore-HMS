@@ -1,0 +1,128 @@
+.queue-page { display: flex; flex-direction: column; gap: 24px; }
+
+/* Page Header */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.page-title { font-size: 22px; font-weight: 700; color: var(--color-text-dark); margin: 0; }
+.page-subtitle { font-size: 13px; color: var(--color-text-light); margin: 4px 0 0; }
+.header-actions { display: flex; gap: 10px; }
+
+/* Stat Cards Grid — 6 cards, 3 per row on desktop */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+
+/* Table Header */
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filter-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.filter-tab {
+  padding: 6px 14px;
+  border-radius: 99px;
+  border: 1.5px solid #e2e8f0;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: all 0.18s ease;
+
+  &:hover { border-color: #1e40af; color: #1e40af; }
+  &.active { background: #1e40af; border-color: #1e40af; color: #fff; }
+}
+
+/* Table */
+.table-wrapper { overflow-x: auto; }
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 10px 14px;
+    border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 14px 14px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f8fafc; }
+  tr.row-active td { background: #eff6ff; }
+}
+
+.ticket-no {
+  font-size: 12px; font-weight: 600;
+  background: #f1f5f9; padding: 3px 8px; border-radius: 4px;
+  color: var(--color-text-dark);
+}
+
+.patient-cell { display: flex; align-items: center; gap: 10px; }
+
+.patient-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: #dbeafe; color: #1e40af;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 600; flex-shrink: 0;
+}
+
+.patient-name { font-size: 14px; font-weight: 500; color: var(--color-text-dark); }
+.patient-meta { font-size: 12px; color: var(--color-text-light); }
+.table-text { font-size: 14px; color: var(--color-text-dark); }
+
+.action-btns { display: flex; gap: 6px; }
+
+.btn-sm { padding: 5px 12px !important; font-size: 12px !important; }
+
+.empty-row {
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 14px;
+  padding: 40px !important;
+}
+
+/* Skeleton loader */
+.skeleton-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 0;
+}
+
+.skeleton-row {
+  height: 52px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

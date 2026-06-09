@@ -1,0 +1,22 @@
+<app-header2 />
+<main>
+  @if (menu.sidebarOpen) {
+    <div class="overlay" (click)="menu.toggleSidebar()"></div>
+  }
+
+  <app-sideBar class="left-panel" [class.open]="menu.sidebarOpen"></app-sideBar>
+  <div class="right-panel">
+    <div style="display: flex; flex-direction: column; gap: 2em; padding: 1.5em">
+      <div style="padding: 1em 0.5em 1em 0.5em">
+        <h1>Good morning, {{ this.userInfo.displayName }}!</h1>
+        <p>{{ this.currentDate }}</p>
+      </div>
+      <div class="dashboard-cards-container">
+        <app-dashboard-cards title="Total Patients" category="patients" />
+        <app-dashboard-cards title="TODAY’S APPOINTMENTS" category="patients" />
+        <app-dashboard-cards title="Total Patients" category="patients" />
+        <app-dashboard-cards title="Total Patients" category="patients" />
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,217 @@
+<div
+  style="
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    background-image: url('./hospital.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0.8);
+    background-blend-mode: lighten;
+  "
+>
+  <div
+    style="
+      background-color: #0f172a;
+      width: 36.8%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    "
+    class="left-panel"
+  >
+    <div class="left-panel-content">
+      <div style="display: flex; gap: 0.125em; align-items: center">
+        <img src="Logo.svg" alt="" class="Logo" />
+        <p class="splash-text">Medicare-HMS</p>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: flex-start; gap: 0.75em">
+        <header>
+          <p style="font-weight: var(--bold)" class="textWhite">Welcome back to</p>
+          <p style="font-family: var(--Lora); color: var(--accent-color); font-weight: var(--bold)">
+            Medicore-HMS
+          </p>
+        </header>
+        <div>
+          <p class="textWhite" style="color: var(--grey)">
+            Sign in to access your hospital <br />
+            dashboard, patient records and <br />management tools.
+          </p>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.75em" class="textWhite">
+        <div class="featuresIcons">
+          <div style="display: flex; gap: 0.75em; align-items: center">
+            <div class="Icons" style="background-color: var(--grey)"></div>
+            <div>
+              <p>Patient management</p>
+              <p>Records, admissions & discharge</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.75em; align-items: center">
+            <div class="Icons" style="background-color: var(--grey)"></div>
+            <div>
+              <p>Appointment scheduling</p>
+              <p>Reminders, confirmations & cancellations</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.75em; align-items: center">
+            <div class="Icons" style="background-color: var(--grey)"></div>
+            <div>
+              <p>Patient management</p>
+              <p>Records, admissions & discharge</p>
+            </div>
+          </div>
+        </div>
+        <div class="featuresList">
+          <li>
+            <ol>
+              <p>Billing and invoicing</p>
+              <p>Insurance claims & payment processing</p>
+            </ol>
+          </li>
+          <li>
+            <ol>
+              <p>Patient management</p>
+              <p>Records, admissions & discharge</p>
+            </ol>
+          </li>
+          <li>
+            <ol>
+              <p>Patient management</p>
+              <p>Records, admissions & discharge</p>
+            </ol>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form style="flex: 1" class="right-panel" [formGroup]="loginDetails">
+    <div>
+      <p style="font-weight: var(--bold)">Sign In</p>
+      <p>Enter your work credentials to continue</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 1em">
+      <div>
+        <label for="email">Work Email</label>
+        <div style="display: flex; gap: 0.75em" class="input-wrapper">
+          <img src="email.svg" alt="" style="height: 20px" />
+          <input
+            type="email"
+            placeholder="john.doe@hospital.com"
+            autocomplete="email"
+            formControlName="email"
+          />
+        </div>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <div style="display: flex; gap: 0.75em" class="input-wrapper">
+          <img src="password.svg" alt="" style="height: 20px" />
+          <input
+            type="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            formControlName="password"
+          />
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 1em" (click)="Googlelogin()">
+        <a><img src="google-sign-up.svg" alt="Google Sign Up" style="width: 100%" /></a>
+      </div>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          font-size: 12px;
+          gap: 1em;
+        "
+        class="rememberMe-content"
+      >
+        <a routerLink="/create-account" style="font-size: var(--base)"
+          >Don't have an account , Create one!</a
+        >
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 1em">
+          <div style="display: flex; align-items: center">
+            <input type="checkbox" name="" id="rememberMe" />
+            <label for="rememberMe" style="font-size: var(--base)">Remember me for 30 days</label>
+          </div>
+          <div><p>Forgot password?</p></div>
+        </div>
+      </div>
+      <p *ngIf="emptyEmail" style="color: red">An email is required</p>
+      <p *ngIf="emptyPassword" style="color: red">A password is required</p>
+      <!-- <p *ngIf="invalidEmail" style="color: red">A proper email is required</p> -->
+
+      <button
+        (click)="login()"
+        [disabled]="isLoading"
+        type="submit"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #1e40af;
+          width: 100%;
+          border-radius: 12px;
+          gap: 10px;
+          border: none;
+          height: 3em;
+        "
+      >
+        <mat-progress-spinner
+          *ngIf="isLoading"
+          mode="indeterminate"
+          color="accent"
+          diameter="24"
+          class="whiteSpinner"
+        ></mat-progress-spinner>
+        <p class="textWhite">{{ isLoading ? 'Loading...' : 'Sign In' }}</p>
+      </button>
+    </div>
+    <div *ngIf="auth.showRoleModal" class="modal-overlay">
+      <div class="modal">
+        <h2>Select Your Role</h2>
+        <p>Please complete your account setup before continuing.</p>
+
+        <label for="role">Role</label>
+
+        <select id="role" #roleSelect class="input-wrapper">
+          <option value="" disabled selected>Select a role</option>
+          <option value="Doctor">Doctor</option>
+          <option value="Nurse">Nurse</option>
+          <option value="Receptionist">Receptionist</option>
+          <option value="Patient">Patient</option>
+        </select>
+
+        <div>
+          <label for="password">Password</label>
+
+          <div class="input-wrapper" style="display: flex; gap: 0.75em">
+            <img src="password.svg" alt="" style="height: 20px" />
+
+            <input
+              type="password"
+              placeholder="Create a password"
+              autocomplete="current-password"
+              #password
+            />
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="continue-btn"
+          (click)="auth.completeOnboarding(roleSelect.value, password.value)"
+        >
+          Continue
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

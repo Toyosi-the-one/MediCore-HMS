@@ -1,0 +1,163 @@
+<!-- <div class="entry-layout">
+  <div class="entry-container">
+
+    <div class="brand">
+      <div class="brand-logo">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+        </svg>
+      </div>
+      <h2>MediCore</h2>
+      <p>Patient Portal</p>
+    </div>
+
+    <div class="card card-auth">
+
+      @if (errorMsg()) {
+        <div class="alert alert-error">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          {{ errorMsg() }}
+        </div>
+      }
+
+      @if (mode() === 'lookup') {
+        <!-- Lookup Mode -->
+        <!-- <h3 class="auth-title">Welcome back</h3>
+        <p class="auth-subtitle">Enter your registered phone number to access your patient dashboard and appointments.</p>
+
+        <form [formGroup]="lookupForm" (ngSubmit)="onLookup()" class="mc-form">
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" formControlName="phone" class="form-input" placeholder="e.g. 08012345678"
+              [class.error]="hasError(lookupForm, 'phone')">
+            @if (hasError(lookupForm, 'phone')) {
+              <span class="error-msg">Valid phone number is required</span>
+            }
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="isLoading()">
+            @if (isLoading()) {
+              <span class="spinner"></span> Finding record...
+            } @else {
+              Continue to Portal
+            }
+          </button>
+        </form>
+
+      } @else {
+        <!-- Registration Mode -->
+        <!-- <div class="auth-header-with-back">
+          <button class="back-btn" (click)="backToLookup()" type="button" title="Back to login">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+            </svg>
+          </button>
+          <div>
+            <h3 class="auth-title" style="margin-bottom:0">Create Account</h3>
+            <p class="auth-subtitle" style="margin-top:4px;margin-bottom:0">We couldn't find a record for that number. Let's get you registered.</p>
+          </div>
+        </div>
+
+        <form [formGroup]="regForm" (ngSubmit)="onRegister()" class="form-grid">
+
+          <div class="form-group">
+            <label class="form-label">First Name <span class="required">*</span></label>
+            <input type="text" formControlName="firstName" class="form-input"
+              [class.error]="hasError(regForm, 'firstName')" placeholder="e.g. Adaeze">
+            @if (hasError(regForm, 'firstName')) { <span class="error-msg">Required</span> }
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Last Name <span class="required">*</span></label>
+            <input type="text" formControlName="lastName" class="form-input"
+              [class.error]="hasError(regForm, 'lastName')" placeholder="e.g. Okonkwo">
+            @if (hasError(regForm, 'lastName')) { <span class="error-msg">Required</span> }
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" formControlName="phone" class="form-input" readonly
+              style="-webkit-text-fill-color: #98A2B3; cursor:not-allowed;">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Date of Birth <span class="required">*</span></label>
+            <input type="date" formControlName="dateOfBirth" class="form-input"
+              [class.error]="hasError(regForm, 'dateOfBirth')">
+            @if (hasError(regForm, 'dateOfBirth')) { <span class="error-msg">Required</span> }
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Gender <span class="required">*</span></label>
+            <select formControlName="gender" class="form-input" [class.error]="hasError(regForm, 'gender')">
+              <option value="">Select gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            @if (hasError(regForm, 'gender')) { <span class="error-msg">Required</span> }
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Blood Group (Optional)</label>
+            <select formControlName="bloodGroup" class="form-input">
+              <option value="">Unknown / Not sure</option>
+              <option value="A+">A+</option><option value="A-">A-</option>
+              <option value="B+">B+</option><option value="B-">B-</option>
+              <option value="AB+">AB+</option><option value="AB-">AB-</option>
+              <option value="O+">O+</option><option value="O-">O-</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1">
+            <label class="form-label">Address <span class="required">*</span></label>
+            <input type="text" formControlName="address" class="form-input"
+              [class.error]="hasError(regForm, 'address')" placeholder="Street, City, State">
+            @if (hasError(regForm, 'address')) { <span class="error-msg">Required</span> }
+          </div>
+
+          <div class="form-divider">Emergency Contact</div>
+
+          <div class="form-group">
+            <label class="form-label">Contact Name <span class="required">*</span></label>
+            <input type="text" formControlName="emergencyContactName" class="form-input"
+              [class.error]="hasError(regForm, 'emergencyContactName')" placeholder="Full name">
+            @if (hasError(regForm, 'emergencyContactName')) { <span class="error-msg">Required</span> }
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Contact Phone <span class="required">*</span></label>
+            <input type="tel" formControlName="emergencyContactPhone" class="form-input"
+              [class.error]="hasError(regForm, 'emergencyContactPhone')" placeholder="e.g. 08099887766">
+            @if (hasError(regForm, 'emergencyContactPhone')) { <span class="error-msg">Required</span> }
+          </div>
+
+          <div class="form-divider" style="grid-column: 1 / -1">Medical Information (Optional)</div>
+
+          <div class="form-group" style="grid-column: 1 / -1">
+            <label class="form-label">Known Allergies</label>
+            <input type="text" formControlName="allergies" class="form-input" placeholder="e.g. Penicillin, Dust (leave blank if none)">
+          </div>
+
+          <div class="form-group" style="grid-column: 1 / -1">
+            <label class="form-label">Relevant Medical History</label>
+            <input type="text" formControlName="medicalHistory" class="form-input" placeholder="e.g. Diabetes, Hypertension (leave blank if none)">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" style="grid-column: 1 / -1; margin-top: 8px;" [disabled]="isLoading()">
+            @if (isLoading()) {
+              <span class="spinner"></span> Creating record...
+            } @else {
+              Register & Continue
+            }
+          </button>
+        </form>
+      }
+
+    </div>
+
+    <p class="footer-text">Protected by MediCore Secure Health Systems.</p>
+  </div>
+</div> --> --> -->

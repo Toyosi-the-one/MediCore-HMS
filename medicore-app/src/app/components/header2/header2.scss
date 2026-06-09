@@ -1,0 +1,21 @@
+.header {
+  height: 7.75em;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em;
+  align-items: center;
+  border-bottom: 1px solid #cbcbcb;
+}
+.collapsible {
+  display: none;
+}
+@media (min-width: 720px) {
+  .hamburger {
+    display: none;
+  }
+  .collapsible {
+    display: flex;
+    align-items: center;
+    gap: 5em;
+  }
+}

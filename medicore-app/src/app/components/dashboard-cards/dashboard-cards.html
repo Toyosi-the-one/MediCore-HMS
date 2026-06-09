@@ -1,0 +1,29 @@
+<div
+  style="
+    border-radius: 12px;
+    background-color: wheat;
+    width: 100%;
+    width: clamp(150px, 15vw, 250px);
+    max-height: 8em;
+    padding: 0.75em;
+    margin: 0;
+  "
+>
+  <div class="card">
+    <div style="display: flex; flex-direction: column; gap: 2em; padding: 0.75em">
+      <p style="font-size: var(--font-1)">{{ title }}</p>
+      <div>
+        @if (value > 1) {
+          <p>
+            {{ value }} {{fullText}}
+          </p>
+        }
+        @if (value < 1 || !value)  {
+          <p style="font-size: var(--font-2); justify-self: flex-end">
+            {{emptyText}}
+          </p>
+        }
+      </div>
+    </div>
+  </div>
+</div>

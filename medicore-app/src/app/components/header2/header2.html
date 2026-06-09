@@ -1,0 +1,67 @@
+<div class="header">
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      justify-content: space-between;
+      width: 100%;
+    "
+  >
+    <div style="display: flex; gap: 0.25em; align-items: center">
+      <!--The flexbox for logo and medicare-->
+      <img src="Logo.svg" alt="" class="Logo" />
+      <div style="font-size: 1em; font-weight: 500">Medicare-HMS</div>
+    </div>
+    <div class="collapsible">
+      <div
+        style="
+          display: flex;
+          height: 2.75em;
+          width: 36.75em;
+          border: 1px solid #d0d5dd;
+          border-radius: 16px;
+          align-items: center;
+          padding-left: 1em;
+          padding-right: 1em;
+        "
+      >
+        <img src="magnifier.svg" alt="" style="height: 1.5em" />
+        <input
+          type="text"
+          style="width: 100%; outline-style: none; border: none"
+          placeholder="Search patient ID, name, record..."
+        />
+      </div>
+
+      <div style="display: flex; align-items: center">
+        <img src="notifications.svg" alt="" style="padding: 20px" />
+        <div
+          class="userDetails"
+          style="display: flex; padding: 0.5em; gap: 0.625em; align-items: center"
+        >
+          @if (this.userDetails().photoURL) {
+            <img
+              [ngSrc]="userDetails().photoURL"
+              alt="user photo"
+              width="50"
+              height="50"
+              style="border-radius: 100%"
+            />
+          }
+          <div style="display: flex; flex-direction: column; line-height: normal">
+            <p class="fullName" style="font-size: 0.875em">{{ this.userDetails().displayName }}</p>
+            <!--The user name-->
+            <p class="role" style="color: #afafaf; font-size: 0.875em">
+              {{ this.userDetails().role }}
+            </p>
+            <!--The user's role we have admin,docotor,nurse,,receptionist,patient-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div (click)="toggleMenu()" class="hamburger">
+    <img src="./hamburger.svg" alt="" />
+  </div>
+</div>

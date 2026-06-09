@@ -1,0 +1,124 @@
+<div class="appt-page">
+
+  @if (submitted()) {
+    <div class="success-card card">
+      <div class="success-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <h2 class="success-title">Appointment Scheduled!</h2>
+      <p class="success-msg">
+        <strong>{{ form.get('patientName')?.value }}</strong> has been booked with
+        <strong>{{ form.get('doctor')?.value }}</strong> at
+        <strong>{{ form.get('timeSlot')?.value }}</strong> on
+        <strong>{{ form.get('date')?.value | date:'fullDate' }}</strong>.
+      </p>
+      <div class="success-actions">
+        <button class="btn btn-primary" (click)="goToDashboard()">Back to Dashboard</button>
+        <button class="btn btn-tertiary" (click)="scheduleAnother()">Schedule Another</button>
+      </div>
+    </div>
+
+  } @else {
+
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">{{ editId() ? 'Reschedule Appointment' : 'Schedule Appointment' }}</h1>
+      <p class="page-subtitle">{{ editId() ? 'Update the date and time for an existing appointment.' : 'Book an appointment for a patient with an available doctor.' }}</p>
+    </div>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="appt-grid">
+
+      <!-- Left: Form Fields -->
+      <div class="card form-card">
+        <h3 class="section-title">Patient Details</h3>
+        <div class="form-group">
+          <label class="form-label">Select Patient <span class="required">*</span></label>
+          <select class="form-input" formControlName="patientId" [class.error]="hasError('patientId')" [disabled]="isLoading()">
+            @if (isLoading()) {
+              <option value="">Loading patients...</option>
+            } @else {
+              <option value="">Search or select a patient...</option>
+              @for (p of patients(); track p.id) {
+                <option [value]="p.id">{{ p.firstName }} {{ p.lastName }} ({{ p.phone }})</option>
+              }
+            }
+          </select>
+          @if (hasError('patientId')) { <span class="error-msg">Please select a patient</span> }
+        </div>
+
+        <h3 class="section-title" style="margin-top: 20px">Appointment Details</h3>
+        <div class="form-group">
+          <label class="form-label">Department <span class="required">*</span></label>
+          <select class="form-input" formControlName="department" [class.error]="hasError('department')">
+            <option value="">Select a department</option>
+            @for (dept of departments; track dept) {
+              <option [value]="dept">{{ dept }}</option>
+            }
+          </select>
+          @if (hasError('department')) { <span class="error-msg">Please select a department</span> }
+        </div>
+        <div class="form-group">
+          <label class="form-label">Doctor <span class="required">*</span></label>
+          <select class="form-input" formControlName="doctor" [class.error]="hasError('doctor')" [attr.disabled]="availableDoctors().length === 0 ? true : null">
+            <option value="">{{ availableDoctors().length === 0 ? 'Select a department first' : 'Select a doctor' }}</option>
+            @for (doc of availableDoctors(); track doc) {
+              <option [value]="doc">{{ doc }}</option>
+            }
+          </select>
+          @if (hasError('doctor')) { <span class="error-msg">Please select a doctor</span> }
+        </div>
+        <div class="form-group">
+          <label class="form-label">Appointment Date <span class="required">*</span></label>
+          <input class="form-input" type="date" formControlName="date" [min]="minDate" [class.error]="hasError('date')" />
+          @if (hasError('date')) { <span class="error-msg">Please select a date</span> }
+        </div>
+        <div class="form-group">
+          <label class="form-label">Notes (optional)</label>
+          <textarea class="form-input" formControlName="notes" placeholder="Reason for visit or additional notes..." rows="3"></textarea>
+        </div>
+      </div>
+
+      <!-- Right: Time Slot Picker -->
+      <div class="card slot-card">
+        <h3 class="section-title">Select Time Slot</h3>
+        @if (hasError('timeSlot')) {
+          <span class="error-msg" style="margin-bottom:12px; display:block">Please select a time slot</span>
+        }
+        <div class="slot-legend">
+          <span class="legend-item"><span class="dot dot-free"></span> Available</span>
+          <span class="legend-item"><span class="dot dot-taken"></span> Taken</span>
+          <span class="legend-item"><span class="dot dot-selected"></span> Selected</span>
+        </div>
+        <div class="slot-grid">
+          @for (slot of timeSlots; track slot) {
+            <button
+              type="button"
+              class="time-slot"
+              [class.taken]="isSlotDisabled(slot)"
+              [class.selected]="isSlotSelected(slot)"
+              [disabled]="isSlotDisabled(slot)"
+              (click)="selectSlot(slot)"
+            >{{ slot }}</button>
+          }
+        </div>
+
+        <div class="slot-submit">
+          <button type="submit" class="btn btn-primary" style="width:100%">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            {{ editId() ? 'Update Appointment' : 'Confirm Appointment' }}
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+
+  }
+</div>

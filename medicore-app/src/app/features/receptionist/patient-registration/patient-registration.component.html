@@ -1,0 +1,191 @@
+<div class="reg-page">
+
+  <!-- Success State -->
+  @if (submitted()) {
+    <div class="success-card card">
+      <div class="success-icon">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
+      <h2 class="success-title">Patient Registered!</h2>
+      <p class="success-msg">
+        <strong>{{ form.get('firstName')?.value }} {{ form.get('lastName')?.value }}</strong>
+        has been successfully registered in the system.
+      </p>
+      <div class="success-actions">
+        <button class="btn btn-primary" (click)="scheduleAppointment()">Schedule Appointment</button>
+        <button class="btn btn-secondary" (click)="goToDashboard()">Back to Dashboard</button>
+        <button class="btn btn-tertiary" (click)="registerAnother()">Register Another</button>
+      </div>
+    </div>
+  } @else {
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">Register New Patient</h1>
+      <p class="page-subtitle">Fill in the patient's details across the three steps below.</p>
+    </div>
+  </div>
+
+  <!-- Stepper -->
+  <div class="stepper">
+    @for (step of [1,2,3]; track step) {
+      <div class="step" [class.active]="currentStep() === step" [class.done]="currentStep() > step">
+        <div class="step-circle">
+          @if (currentStep() > step) {
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          } @else {
+            {{ step }}
+          }
+        </div>
+        <span class="step-label">
+          {{ step === 1 ? 'Personal Info' : step === 2 ? 'Contact Info' : 'Medical Info' }}
+        </span>
+      </div>
+      @if (step < 3) { <div class="step-line" [class.done]="currentStep() > step"></div> }
+    }
+  </div>
+
+  <!-- Form Card -->
+  <div class="card">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <!-- STEP 1: Personal Info -->
+      @if (currentStep() === 1) {
+        <div class="form-section">
+          <h3 class="section-title">Personal Information</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name <span class="required">*</span></label>
+              <input class="form-input" [class.error]="hasError('firstName')" formControlName="firstName" placeholder="e.g. Adaeze" />
+              @if (hasError('firstName')) { <span class="error-msg">First name is required</span> }
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name <span class="required">*</span></label>
+              <input class="form-input" [class.error]="hasError('lastName')" formControlName="lastName" placeholder="e.g. Okonkwo" />
+              @if (hasError('lastName')) { <span class="error-msg">Last name is required</span> }
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Date of Birth <span class="required">*</span></label>
+              <input class="form-input" type="date" [class.error]="hasError('dateOfBirth')" formControlName="dateOfBirth" />
+              @if (hasError('dateOfBirth')) { <span class="error-msg">Date of birth is required</span> }
+            </div>
+            <div class="form-group">
+              <label class="form-label">Gender <span class="required">*</span></label>
+              <select class="form-input" [class.error]="hasError('gender')" formControlName="gender">
+                <option value="">Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+              @if (hasError('gender')) { <span class="error-msg">Gender is required</span> }
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Blood Group</label>
+              <select class="form-input" formControlName="bloodGroup">
+                <option value="">Unknown / Not sure</option>
+                <option>A+</option><option>A-</option>
+                <option>B+</option><option>B-</option>
+                <option>AB+</option><option>AB-</option>
+                <option>O+</option><option>O-</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      }
+
+      <!-- STEP 2: Contact Info -->
+      @if (currentStep() === 2) {
+        <div class="form-section">
+          <h3 class="section-title">Contact Information</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Phone Number <span class="required">*</span></label>
+              <input class="form-input" [class.error]="hasError('phone')" formControlName="phone" placeholder="e.g. 08012345678" type="tel" />
+              @if (hasError('phone')) { <span class="error-msg">Enter a valid phone number</span> }
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input class="form-input" [class.error]="hasError('email')" formControlName="email" placeholder="optional" type="email" />
+              @if (hasError('email')) { <span class="error-msg">Enter a valid email</span> }
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Home Address <span class="required">*</span></label>
+            <textarea class="form-input" formControlName="address" placeholder="Street, City, State" rows="3" [class.error]="hasError('address')"></textarea>
+            @if (hasError('address')) { <span class="error-msg">Address is required</span> }
+          </div>
+        </div>
+      }
+
+      <!-- STEP 3: Medical Info -->
+      @if (currentStep() === 3) {
+        <div class="form-section">
+          <h3 class="section-title">Medical Information</h3>
+          <div class="form-group">
+            <label class="form-label">Known Allergies</label>
+            <input class="form-input" formControlName="allergies" placeholder="e.g. Penicillin, Peanuts (leave blank if none)" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Existing Medical Conditions</label>
+            <textarea class="form-input" formControlName="medicalHistory" placeholder="e.g. Hypertension, Diabetes (leave blank if none)" rows="3"></textarea>
+          </div>
+          <h3 class="section-title" style="margin-top: 20px">Emergency Contact</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Contact Name <span class="required">*</span></label>
+              <input class="form-input" formControlName="emergencyContactName" placeholder="Full name" [class.error]="hasError('emergencyContactName')" />
+              @if (hasError('emergencyContactName')) { <span class="error-msg">Required</span> }
+            </div>
+            <div class="form-group">
+              <label class="form-label">Contact Phone <span class="required">*</span></label>
+              <input class="form-input" formControlName="emergencyContactPhone" placeholder="e.g. 08099887766" type="tel" [class.error]="hasError('emergencyContactPhone')" />
+              @if (hasError('emergencyContactPhone')) { <span class="error-msg">Required</span> }
+            </div>
+          </div>
+        </div>
+      }
+
+      <!-- Error Banner -->
+      @if (errorMessage()) {
+        <div style="background: #FEF2F2; border: 1px solid #FECACA; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; color: #DC2626; font-size: 14px;">
+          ⚠️ {{ errorMessage() }}
+        </div>
+      }
+
+      <!-- Navigation Buttons -->
+      <div class="form-nav">
+        @if (currentStep() > 1) {
+          <button type="button" class="btn btn-tertiary" (click)="prevStep()">← Back</button>
+        } @else {
+          <span></span>
+        }
+        @if (currentStep() < totalSteps) {
+          <button type="button" class="btn btn-primary" (click)="nextStep()">Next →</button>
+        } @else {
+          <button type="submit" class="btn btn-primary" [disabled]="isLoading()">
+            @if (isLoading()) {
+              Saving...
+            } @else {
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Register Patient
+            }
+          </button>
+        }
+      </div>
+
+    </form>
+  </div>
+
+  } <!-- end else -->
+</div>
