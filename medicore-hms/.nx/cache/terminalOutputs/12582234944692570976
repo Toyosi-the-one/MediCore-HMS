@@ -1,0 +1,9 @@
+[2m> [22mnpm run start:dev
+
+
+> medicore-server@0.0.1 start:dev
+> nest start --watch
+
+[2J[3J[H[[90m9:07:34 AM[0m] Starting compilation in watch mode...
+
+Warning: command "npm run start:dev" exited with non-zero status code

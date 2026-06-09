@@ -1,0 +1,5 @@
+[NX v22.7.5 Daemon Client] - 2026-06-08T18:21:46.061Z - [ProjectGraphListener] Socket closed, triggering reconnection
+[NX v22.7.5 Daemon Client] - 2026-06-08T18:21:46.065Z - [ProjectGraphListener] Starting reconnection for 1 callbacks
+[NX v22.7.5 Daemon Client] - 2026-06-08T18:21:46.066Z - [Client] Waiting for server (max: 6000 attempts, 10ms interval)
+[NX v22.7.5 Daemon Client] - 2026-06-08T18:23:27.782Z - [Client] Server not available after 6000 attempts
+[NX v22.7.5 Daemon Client] - 2026-06-08T18:23:27.784Z - [ProjectGraphListener] Failed to reconnect - server unavailable

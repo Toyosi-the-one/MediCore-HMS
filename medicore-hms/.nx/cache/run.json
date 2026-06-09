@@ -1,0 +1,32 @@
+{
+  "run": {
+    "command": "nx run-many -t serve -p medicore-app medicore-server",
+    "startTime": "2026-06-07T07:00:08.504Z",
+    "endTime": "2026-06-07T07:03:01.714Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "medicore-app:serve",
+      "target": "serve",
+      "projectName": "medicore-app",
+      "hash": "9887016186432609350",
+      "startTime": "2026-06-07T07:00:08.586Z",
+      "endTime": "2026-06-07T07:03:01.675Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    },
+    {
+      "taskId": "medicore-server:serve",
+      "target": "serve",
+      "projectName": "medicore-server",
+      "hash": "12582234944692570976",
+      "startTime": "2026-06-07T07:00:08.586Z",
+      "endTime": "2026-06-07T07:03:01.701Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    }
+  ]
+}
